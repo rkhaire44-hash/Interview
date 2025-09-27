@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Life Cycle Q&A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(-45deg, #FFC0CB, #ADD8E6, #90EE90, #ADD8E6);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            color: #4A5568;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .answer-box {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+        .answer-box.active {
+            max-height: 1000px; / A large value to allow the transition /
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="container-card max-w-4xl w-full p-6 sm:p-12 rounded-2xl text-center">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-8 text-gray-800">Interview Preparation RK</h1>
+
+        <div id="main-menu" class="space-y-6 md:space-y-0 md:flex md:space-x-4">
+            <button class="flex-1 w-full text-left p-4 rounded-xl font-bold text-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleSection('tlc-section')">
+                Trade Life Cycle (TLC)
+            </button>
+            <button class="flex-1 w-full text-left p-4 rounded-xl font-bold text-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleSection('bonds-section')">
+                Type of Bonds
+            </button>
+            <button class="flex-1 w-full text-left p-4 rounded-xl font-bold text-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleSection('corporate-action-section')">
+                Corporate Action
+            </button>
+        </div>
+
+        <!-- Trade Life Cycle Section -->
+        <div id="tlc-section" class="space-y-6 mt-10 hidden">
+            <h2 class="text-3xl font-bold mb-6 text-purple-700">TLC Questions</h2>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q1')">
+                1. What is the Trade Life Cycle?
+            </button>
+            <div id="q1-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The Trade Life Cycle is the complete, end-to-end process that a financial transaction goes through, from the initial decision to trade to its final settlement and recording. It's a series of logical steps that ensure a transaction is executed, validated, and completed accurately and in compliance with regulations. It is typically divided into three main stages: Front Office (execution), Middle Office (risk and validation), and Back Office (settlement).</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q2')">
+                2. How does the Trade Life Cycle for a Bond differ from that of an Equity?
+            </button>
+            <div id="q2-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The fundamental stages are the same, but the specifics differ. Bonds are often traded Over-the-Counter (OTC), meaning they are negotiated directly between two parties, whereas equities are predominantly traded on centralized exchanges. Additionally, bond settlements involve the calculation of accrued interest, and the settlement period (T+2) can be more rigid. The complexities of OTC derivatives often require more robust middle office validation than a simple equity trade.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q3')">
+                3. Explain the role of the Front Office in the Trade Life Cycle.
+            </button>
+            <div id="q3-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The Front Office is the client-facing and deal-making part of the business. Its role is to initiate and execute trades. This involves order generation (e.g., a portfolio manager deciding to buy a stock), order placement (entering the order into a system), and trade execution (finding a counterparty and completing the deal).</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q4')">
+                4. What are the key responsibilities of the Middle Office?
+            </button>
+            <div id="q4-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The Middle Office acts as a critical control function, ensuring the trade is valid and doesn't expose the firm to undue risk. Key responsibilities include trade capture (recording the trade), trade validation (checking for accuracy), and risk management (assessing credit, market, and operational risks). They are the bridge between the trading floor and the operations team.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q5')">
+                5. What is the purpose of the Back Office?
+            </button>
+            <div id="q5-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The Back Office is responsible for the operational finalization of the trade. Its purpose is to ensure the transaction settles correctly. This involves confirmation and matching (agreed-upon trade details with the counterparty), clearing and settlement (the physical exchange of the asset and cash), and reconciliation (matching internal records with external statements).</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q6')">
+                6. What is the significance of "Trade Confirmation" in the life cycle?
+            </button>
+            <div id="q6-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Trade confirmation is a crucial middle office/back office function. It's the process where the firm sends a formal record of the trade to the counterparty. Both sides then compare their records to ensure all details, such as security, quantity, and price, are identical. Mismatches, known as "breaks," must be resolved before settlement, preventing operational errors and financial loss.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q7')">
+                7. What is the difference between "Clearing" and "Settlement"?
+            </button>
+            <div id="q7-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Clearing is the process that occurs between the trade execution and the settlement. It involves a clearinghouse acting as an intermediary to verify the details of the trade and manage the risk of default. It determines the final obligations of both the buyer and the seller. Settlement is the final step where the actual exchange of the asset for cash takes place.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q8')">
+                8. What does "T+2" mean in the context of bond and equity settlement?
+            </button>
+            <div id="q8-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>"T+2" stands for Trade Date plus two business days. It is the standard settlement period for most stocks and bonds in major markets like the U.S. and Europe. This means that if you execute a trade on Monday (T), the actual exchange of cash and securities will happen on Wednesday (T+2), assuming no holidays.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q9')">
+                9. Why are bonds often traded OTC, and what are the implications for the Trade Life Cycle?
+            </button>
+            <div id="q9-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Bonds are often traded OTC because the market is more fragmented and less standardized than the equity market. There are thousands of different bonds, each with unique terms and covenants. This makes a centralized exchange less practical. The implication for the life cycle is that manual intervention and robust middle office validation are more critical to ensure counterparty risk is managed and trade details are correctly captured.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q10')">
+                10. Explain the concept of "Accrued Interest" for a bond trade.
+            </button>
+            <div id="q10-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Accrued interest is the interest that a bond has earned since the last coupon payment date but has not yet been paid. When a bond is sold, the buyer must pay the seller the accrued interest in addition to the bond's principal price. This is a key calculation in the back office of a bond trade and can be a source of "breaks" if not calculated correctly by both parties.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q11')">
+                11. What is the role of a "Central Counterparty" (CCP) or Clearinghouse?
+            </button>
+            <div id="q11-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A Central Counterparty (CCP) is a clearinghouse that acts as a buyer to every seller and a seller to every buyer in a transaction. Its primary role is to guarantee the completion of a trade even if one of the parties defaults. The CCP greatly reduces counterparty risk and is a fundamental part of the post-financial crisis regulatory framework.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q12')">
+                12. What is "Reconciliation," and why is it important?
+            </button>
+            <div id="q12-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Reconciliation is the process of matching internal records against external statements from custodians, clearinghouses, and other third parties. It is a critical check to ensure the firm's books are accurate and all transactions are properly accounted for. It helps in detecting and resolving discrepancies, fraud, or errors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q13')">
+                13. How does the concept of "Delivery Versus Payment" (DVP) apply to a bond trade?
+            </button>
+            <div id="q13-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Delivery Versus Payment (DVP) is a settlement mechanism that ensures that the transfer of securities only occurs after the payment has been confirmed. It is a fundamental principle used in the settlement of financial instruments, particularly bonds, to eliminate principal risk, which is the risk of one party fulfilling their part of the obligation while the other party defaults.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q14')">
+                14. What are some of the key risks managed during the Trade Life Cycle?
+            </button>
+            <div id="q14-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>There are several key risks managed during the Trade Life Cycle:</p>
+                <ul class="list-disc list-inside mt-2 space-y-2">
+                    <li>Operational Risk: The risk of loss due to failures in internal processes, people, and systems.</li>
+                    <li>Credit Risk: The risk that a counterparty will fail to fulfill their obligations.</li>
+                    <li>Market Risk: The risk that the value of the security will change between trade execution and settlement.</li>
+                    <li>Liquidity Risk: The risk of not being able to sell the security at a reasonable price when needed.</li>
+                </ul>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q15')">
+                15. What are the consequences of a failed trade or "break"?
+            </button>
+            <div id="q15-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A failed trade, or "break," occurs when the buyer and seller cannot agree on the terms of the transaction. Consequences can include financial loss due to market fluctuations, regulatory fines, and a loss of reputation. Failed trades can also tie up capital and create significant operational headaches for the back office, as they have to be manually resolved.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q16')">
+                16. What is the role of technology and automation in today's Trade Life Cycle?
+            </button>
+            <div id="q16-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Technology has transformed the trade life cycle, making it faster, more efficient, and less prone to human error. Automation, especially in the Middle and Back Offices, has streamlined processes like trade validation, confirmation matching, and reconciliation. Electronic trading platforms allow for near-instantaneous execution, while sophisticated software manages risk in real-time. This has led to a reduction in settlement cycles (e.g., the move towards T+1) and a significant decrease in operational risk.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q17')">
+                17. Can you describe the "Trade Enrichment" process?
+            </button>
+            <div id="q17-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Trade enrichment is the process of adding essential details to a raw, executed trade record. When a trade is first executed, it's a basic record. The enrichment process adds crucial information like the full legal name of the counterparty, specific settlement instructions, regulatory reporting codes, and any relevant tax or fee calculations. This enriched data is what allows the trade to be processed correctly through the rest of the life cycle.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q18')">
+                18. What is the difference between a "Market Order" and a "Limit Order" and how does this affect the trade life cycle?
+            </button>
+            <div id="q18-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Market Order: An order to buy or sell a security immediately at the best available current market price.</p>
+                <p class="mt-2">Limit Order: An order to buy or sell a security at a specific price or better. The trade will only be executed if the market price reaches the specified limit.</p>
+                <p class="mt-2">The type of order affects the Front Office execution stage. A market order is usually executed instantly, moving quickly to the next phase. A limit order, however, may sit on the books for an extended period, waiting for the right price, and won't be part of the life cycle until it's actually executed.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q19')">
+                19. What is a "Block Trade" and how is it processed?
+            </button>
+            <div id="q19-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A block trade is a large-volume transaction involving a substantial number of shares or bonds. Because of their size, block trades are typically negotiated over-the-counter (OTC) to avoid impacting market prices. They are processed differently in the life cycle: the details of the trade are agreed upon beforehand, and then the trade is divided into smaller "allocations" for different client accounts. Each of these smaller allocations then goes through the standard back-office process.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q20')">
+                20. How do "Corporate Actions" fit into the Trade Life Cycle?
+            </button>
+            <div id="q20-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Corporate actions—such as dividends, stock splits, or mergers—are events that affect the securities held by a firm. They are part of the post-settlement phase. The Back Office is responsible for managing these actions, ensuring the firm and its clients receive the correct payments or new securities. This often requires complex calculations and communication with depositories to ensure all accounts are updated correctly.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q21')">
+                21. What is "Straight-Through Processing" (STP) and why is it a goal for financial firms?
+            </button>
+            <div id="q21-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Straight-Through Processing (STP) is a process where a transaction is fully automated from the point of trade execution to final settlement without any manual intervention. STP is the ultimate goal because it significantly reduces operational risk, improves efficiency, and lowers costs. By eliminating manual data entry and reconciliation, firms can process a higher volume of trades faster and with fewer errors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q22')">
+                22. Can you explain the concept of "Novation" in the context of clearinghouses?
+            </button>
+            <div id="q22-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Novation is the legal process by which a clearinghouse interposes itself between the original buyer and seller of a trade. This means the clearinghouse becomes the buyer to the seller and the seller to the buyer. This process legally replaces the original contracts with new ones, thereby centralizing risk and guaranteeing the completion of the trade.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q23')">
+                23. What is the role of a custodian in the Trade Life Cycle?
+            </button>
+            <div id="q23-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A custodian is a financial institution that holds a firm's securities and other assets to minimize the risk of theft or loss. They play a vital role in the Back Office by safekeeping the securities and facilitating the settlement process. They receive the securities and funds from the clearinghouse and update the client's records to reflect the new ownership.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q24')">
+                24. What are the key differences between trading a security on an exchange and over-the-counter (OTC)?
+            </button>
+            <div id="q24-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>
+                    Exchange-Traded: Centralized, standardized, highly regulated, and transparent. The exchange itself guarantees the trade's completion. Common for equities.
+                </p>
+                <p class="mt-2">
+                    OTC-Traded: Decentralized, bilateral, less transparent, and highly customizable. The counterparty's creditworthiness is a key consideration. Common for bonds and complex derivatives.
+                </p>
+                <p class="mt-2">
+                    The life cycle for an OTC trade often has more steps for due diligence and risk management in the Middle Office due to the lack of a central clearing body.
+                </p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q25')">
+                25. What is the "Ex-Dividend Date" for equities and how does it relate to the Trade Life Cycle?
+            </button>
+            <div id="q25-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The ex-dividend date is the day on which a stock trades without its dividend. To receive the dividend, an investor must own the stock before this date. This is important for the Back Office because a trade must settle before the ex-dividend date for the buyer to receive the dividend. If the trade settles on or after this date, the seller (the original owner) will receive the dividend.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q26')">
+                26. What is the difference between "Clean Price" and "Dirty Price" for a bond?
+            </button>
+            <div id="q26-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>
+                    Clean Price: The price of a bond without any accrued interest. This is the price quoted in the market.
+                </p>
+                <p class="mt-2">
+                    Dirty Price: The price of a bond including accrued interest. This is the actual amount the buyer pays the seller at settlement.
+                </p>
+                <p class="mt-2">
+                    The Back Office is responsible for calculating the accrued interest to arrive at the dirty price for settlement.
+                </p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q27')">
+                27. How does a firm use a "Post-Trade Analytics" system?
+            </button>
+            <div id="q27-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>Post-trade analytics systems are used in the Back Office to analyze trade data after settlement. They help in P&L (Profit & Loss) reporting, calculating fees, and generating reports for internal management and regulators. These systems also identify trends and potential inefficiencies in the trade life cycle, leading to process improvements.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q28')">
+                28. What is the "Legal Confirmation" and why is it important for OTC derivatives?
+            </button>
+            <div id="q28-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A legal confirmation is a legally binding document that outlines all the terms of an OTC derivative trade. It is crucial because, unlike exchange-traded products, OTC trades are bilateral agreements without a central clearinghouse guarantee. The confirmation ensures all parties have a clear, legally enforceable record of the transaction, mitigating legal and operational risk.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q29')">
+                29. Can you explain the concept of a "Settlement Fail" and its consequences?
+            </button>
+            <div id="q29-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>A settlement fail happens when one of the parties in a trade doesn't deliver the cash or security on the agreed-upon settlement date. This can be caused by various reasons, such as a back-office error, a lack of funds, or a problem with the transfer. The consequences can include financial penalties, reputational damage, and a higher risk of the entire transaction collapsing.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('q30')">
+                30. How has the recent move to a T+1 settlement cycle impacted the Trade Life Cycle?
+            </button>
+            <div id="q30-answer" class="answer-box rounded-xl text-left bg-purple-100 border border-purple-200 text-gray-700 transition-all duration-500">
+                <p>The recent move to a T+1 settlement cycle (settlement one business day after the trade date) has significantly compressed the time available for the Middle and Back Offices to process a trade. This has increased the pressure on automation and straight-through processing. Firms must have highly efficient and reliable systems to handle trade matching, confirmation, and reconciliation within a much shorter timeframe to avoid settlement fails.</p>
+            </div>
+        </div>
+
+        <!-- Types of Bonds Section -->
+        <div id="bonds-section" class="space-y-6 mt-10 hidden">
+            <h2 class="text-3xl font-bold mb-6 text-purple-700">Type of Bonds</h2>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond1')">
+                1. What are Government Bonds?
+            </button>
+            <div id="bond1-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Government bonds are debt securities issued by national or sub-national governments to raise capital. They are generally considered the safest type of bond because they are backed by the "full faith and credit" of the issuing government, which has the power to tax or print money to repay its debt. Examples include U.S. Treasury bonds and UK Gilts.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond2')">
+                2. What are Corporate Bonds?
+            </button>
+            <div id="bond2-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Corporate bonds are debt securities issued by corporations to raise capital for a variety of purposes, such as financing new projects, expanding operations, or refinancing existing debt. They are riskier than government bonds because a company can default, but they typically offer higher interest rates to compensate investors for the added risk.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond3')">
+                3. What are Municipal Bonds?
+            </button>
+            <div id="bond3-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Municipal bonds are debt securities issued by state and local governments or their agencies to fund public projects like schools, bridges, and hospitals. A key feature of municipal bonds is that the interest income they generate is often exempt from federal and, in some cases, state and local income taxes, making them attractive to high-income investors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond4')">
+                4. What is the difference between a Fixed-Rate and a Floating-Rate Bond?
+            </button>
+            <div id="bond4-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A fixed-rate bond pays a constant interest rate over its entire life, providing a predictable income stream. A floating-rate bond (FRN), on the other hand, has an interest rate that is periodically adjusted based on a benchmark rate, such as LIBOR or a central bank's rate. This makes FRNs more sensitive to changes in prevailing market rates.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond5')">
+                5. Explain what a Zero-Coupon Bond is.
+            </button>
+            <div id="bond5-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A zero-coupon bond does not pay periodic interest (coupons). Instead, it is issued at a deep discount to its face value, and the investor receives the full face value at maturity. The investor's return comes from the difference between the purchase price and the face value received at maturity. These are often used for long-term goals like retirement planning.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond6')">
+                6. What is a Callable Bond and who benefits from it?
+            </button>
+            <div id="bond6-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A callable bond gives the issuer the right, but not the obligation, to redeem the bond before its maturity date. The issuer typically exercises this right when interest rates fall, allowing them to refinance their debt at a lower rate. This feature benefits the issuer at the expense of the investor, who faces reinvestment risk if the bond is called. For this reason, callable bonds usually offer a higher interest rate to compensate the investor.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond7')">
+                7. What is a Puttable Bond and who benefits from it?
+            </button>
+            <div id="bond7-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A puttable bond gives the bondholder the right, but not the obligation, to sell the bond back to the issuer before its maturity date. The bondholder would exercise this "put" option if interest rates rise, allowing them to reinvest the principal at a higher rate. This feature benefits the investor, making puttable bonds less risky and typically offering a lower interest rate than non-puttable bonds.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond8')">
+                8. What is a Convertible Bond?
+            </button>
+            <div id="bond8-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A convertible bond is a hybrid security that gives the holder the option to convert the bond into a specified number of common shares of the issuing company. It combines the safety of a bond's fixed-income payments with the potential for capital appreciation if the company's stock price rises.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond9')">
+                9. What are High-Yield Bonds?
+            </button>
+            <div id="bond9-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>High-yield bonds, also known as "junk bonds," are issued by companies with a lower credit rating (below investment grade). Due to their higher risk of default, these bonds offer a significantly higher interest rate to attract investors. They are suitable for investors with a higher risk tolerance seeking higher returns.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond10')">
+                10. What are Inflation-Linked Bonds?
+            </button>
+            <div id="bond10-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Inflation-linked bonds are designed to protect investors from the risk of inflation. The bond's principal value and interest payments are adjusted periodically based on an inflation index, such as the Consumer Price Index (CPI). This ensures that the investor's return maintains its purchasing power over time. A common example is the Treasury Inflation-Protected Security (TIPS) in the U.S.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond11')">
+                11. What is a "Green Bond"?
+            </button>
+            <div id="bond11-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A green bond is a type of bond specifically issued to finance projects that have positive environmental benefits, such as renewable energy, clean transportation, or sustainable water management. While they are fundamentally similar to other bonds, their designation as "green" allows issuers to attract a specific type of socially conscious investor.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond12')">
+                12. What are Perpetual Bonds?
+            </button>
+            <div id="bond12-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Perpetual bonds, or "Consols," are bonds that have no maturity date. They provide interest payments to the bondholder indefinitely. These are extremely rare in modern finance and have been issued primarily by governments in the past.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond13')">
+                13. What is a Sukuk?
+            </button>
+            <div id="bond13-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Sukuk is a Sharia-compliant financial certificate often referred to as an "Islamic bond." Unlike traditional bonds, which involve paying interest, Sukuk are structured to represent an ownership interest in a portfolio of assets. Investors receive a share of the revenue generated by these underlying assets, rather than receiving a fixed interest payment, to comply with the prohibition of interest (riba) in Islam.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond14')">
+                14. Explain what a Foreign Bond is and give some examples.
+            </button>
+            <div id="bond14-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A foreign bond is issued in a domestic market by a foreign entity and is denominated in the domestic currency. It allows foreign issuers to tap into a new capital market. Some famous examples include:</p>
+                <ul class="list-disc list-inside mt-2 space-y-2">
+                    <li>Yankee bonds: Issued in the U.S. by a non-U.S. entity.</li>
+                    <li>Samurai bonds: Issued in Japan by a non-Japanese entity.</li>
+                    <li>Bulldog bonds: Issued in the U.K. by a non-British entity.</li>
+                </ul>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond15')">
+                15. What is the difference between an Investment-Grade and a High-Yield Bond?
+            </button>
+            <div id="bond15-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The key difference lies in their credit rating. Investment-grade bonds are issued by financially stable corporations or governments that are considered to have a very low risk of default, rated BBB- or higher by agencies like Standard & Poor's. High-yield bonds, on the other hand, have a rating below investment grade and are considered to have a higher risk of default, requiring a higher interest rate to attract investors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond16')">
+                16. What is the difference between a secured and unsecured bond?
+            </button>
+            <div id="bond16-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A secured bond is backed by a specific asset or a pool of assets that act as collateral. If the issuer defaults, bondholders have a legal claim to those assets to recover their investment. An unsecured bond, also known as a debenture, is not backed by collateral and relies solely on the issuer's creditworthiness and ability to repay. Unsecured bonds are riskier for investors, so they typically offer a higher yield.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond17')">
+                17. What is a "bond indenture"?
+            </button>
+            <div id="bond17-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A bond indenture is a legally binding contract between the bond issuer and the bondholders. It outlines all the key terms of the bond, including the coupon rate, maturity date, covenants, call provisions (if any), and the rights and duties of both the issuer and the bondholders. It's a crucial document that protects the interests of investors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond18')">
+                18. How do "Revenue Bonds" differ from "General Obligation Bonds"?
+            </button>
+            <div id="bond18-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Both are types of municipal bonds. Revenue bonds are secured by the revenue generated from a specific project, such as tolls from a bridge or fees from a hospital. If the project fails to generate enough revenue, the bondholders may not be repaid. General obligation bonds (GO bonds) are backed by the full taxing power and credit of the issuing government entity, making them generally safer than revenue bonds.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond19')">
+                19. What is the purpose of a "Subordinated Bond"?
+            </button>
+            <div id="bond19-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A subordinated bond is a type of unsecured bond that has a lower claim on the issuer's assets in the event of default or bankruptcy. This means that subordinated bondholders are paid after senior bondholders and other creditors. Due to their lower priority, they carry a higher risk of not being repaid and, therefore, offer a higher yield.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond20')">
+                20. Explain what a "Credit Default Swap" (CDS) is and how it relates to bonds.
+            </button>
+            <div id="bond20-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Credit Default Swap (CDS) is a financial derivative that acts like an insurance policy against a bond defaulting. An investor who owns a bond can buy a CDS from a third party. The investor pays a periodic premium, and if the bond issuer defaults, the CDS seller compensates the investor for their losses. A CDS allows bondholders to hedge their risk without selling the underlying bond.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond21')">
+                21. What is the "Bond's Par Value" and why is it important?
+            </button>
+            <div id="bond21-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The par value (or face value) is the amount the bond issuer promises to pay the bondholder at maturity. For most bonds, this is $1,000. It is important because the coupon payments are calculated as a percentage of the par value. For example, a 5% coupon bond with a $1,000 par value will pay $50 in interest per year.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond22')">
+                22. How do "Mortgage-Backed Securities" (MBS) work?
+            </button>
+            <div id="bond22-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Mortgage-backed securities are bonds that are backed by a pool of mortgage loans. Investors in an MBS receive payments from the interest and principal of the underlying mortgages. These bonds played a central role in the 2008 financial crisis, highlighting the risks associated with them, such as prepayment risk (when homeowners pay off their mortgages early).</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond23')">
+                23. What is a "Collateralized Debt Obligation" (CDO)?
+            </button>
+            <div id="bond23-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Collateralized Debt Obligation (CDO) is a complex structured finance product. It is a bond issued by a special purpose entity that holds a diversified portfolio of debt instruments, such as mortgages, corporate bonds, or other types of loans. The payments from these underlying assets are used to pay interest and principal to CDO investors, who are typically grouped into different risk tranches.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond24')">
+                24. What are the key features of an "Event-Driven Bond"?
+            </button>
+            <div id="bond24-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Event-driven bonds are a type of security whose payments are contingent upon a specific event. For example, a catastrophe bond (or Cat bond) pays a high interest rate, but if a major natural disaster occurs, the issuer can use the principal to pay for the damages instead of repaying the bondholders. This transfers risk from the issuer to the investors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond25')">
+                25. What is a "Structured Note"?
+            </button>
+            <div id="bond25-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A structured note is a customized debt instrument whose payments are tied to the performance of an underlying asset, such as a stock index, commodity, or currency. They are highly complex and often combine a traditional bond with a derivative. The goal is to provide investors with a unique risk-return profile that may not be available with traditional bonds.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond26')">
+                26. What is the difference between a bond and a debenture?
+            </button>
+            <div id="bond26-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The terms are often used interchangeably, but a debenture is a type of bond that is unsecured and relies solely on the issuer's creditworthiness. While all debentures are bonds, not all bonds are debentures, as some bonds are secured by specific collateral.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond27')">
+                27. What is a "Serial Bond" vs. a "Term Bond"?
+            </button>
+            <div id="bond27-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Serial bonds have a single issue date but mature at different dates over a period of time. This provides the issuer with flexibility in managing their debt payments.</p>
+                <p class="mt-2">Term bonds have a single maturity date for all bonds in the issue. This is the more common type of bond.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond28')">
+                28. What is the purpose of "Sinking Fund Provisions"?
+            </button>
+            <div id="bond28-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A sinking fund is a fund set up by the bond issuer to set aside money periodically to retire a portion of the outstanding bonds. This ensures that the issuer has the necessary funds to pay off the bond at maturity. It reduces the risk of default for bondholders and can make the bond more attractive.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond29')">
+                29. What is a "Step-Up Bond"?
+            </button>
+            <div id="bond29-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A step-up bond is a type of callable bond where the coupon rate increases at a predetermined date. The issuer would have an incentive to call the bond just before the coupon rate increases to avoid paying the higher interest. This feature is often used in periods of low interest rates to attract investors.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond30')">
+                30. What is a "Zero-Callable Bond"?
+            </button>
+            <div id="bond30-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A zero-callable bond is a specialized type of zero-coupon bond that has a call feature. It is a rare instrument where the issuer can call the bond before maturity. Because it has no coupon payments, the call price is typically set at the original issue price plus a premium.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond31')">
+                31. What is a "perpetual callable bond"?
+            </button>
+            <div id="bond31-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A perpetual callable bond is a debt security that has no maturity date but gives the issuer the right to redeem the bond after a specified period. These bonds are often issued by banks to fulfill capital requirements. They provide investors with a continuous stream of interest payments, but with the risk that the issuer may call the bond and repay the principal, especially if interest rates fall.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond32')">
+                32. What is a "Greenium"?
+            </button>
+            <div id="bond32-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Greenium is a premium that investors are willing to pay for green bonds, which results in a lower yield for the issuer compared to an equivalent conventional bond. The term is a blend of "green" and "premium." It indicates that there is a strong demand for bonds that finance environmentally beneficial projects.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond33')">
+                33. What is the difference between Green Bonds and Social Bonds?
+            </button>
+            <div id="bond33-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The key difference is the use of proceeds. Green bonds fund projects with positive environmental impacts, such as renewable energy or clean transportation. Social bonds fund projects with positive social impacts, such as affordable housing, access to healthcare, or education. Both fall under the broader category of ESG (Environmental, Social, and Governance) investing.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond34')">
+                34. What is a "Social Impact Bond" (SIB)?
+            </button>
+            <div id="bond34-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Social Impact Bond (SIB) is a unique, outcome-based financing instrument. It is not a traditional bond but rather a contract. Private investors provide upfront capital for a social program (e.g., job training for the unemployed). If the program achieves pre-agreed-upon social outcomes (e.g., a certain number of people finding jobs), the government or a third-party funder repays the investors with a return. The investors take the financial risk, and the government only pays for success.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond35')">
+                35. What are "Retail Bonds" vs. "Institutional Bonds"?
+            </button>
+            <div id="bond35-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The distinction is based on the target investor. Retail bonds are issued in small denominations and are intended for individual investors. They are often listed on a stock exchange to provide liquidity. Institutional bonds are issued in much larger denominations and are sold to institutional investors like pension funds, mutual funds, and insurance companies. This market is far larger and more active than the retail market.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond36')">
+                36. What is a "Catastrophe Bond" (Cat Bond)?
+            </button>
+            <div id="bond36-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A catastrophe bond is a high-yield, high-risk bond that transfers risk from an insurer to investors. The investors receive a high interest rate, but if a predefined natural disaster (like a hurricane or earthquake) occurs, the issuer can use the bond's principal to pay claims, and the investors lose their investment. It's a way for insurance companies to manage risk in the face of major events.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond37')">
+                37. What is the "Call Premium" on a callable bond?
+            </button>
+            <div id="bond37-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A call premium is the amount an issuer must pay to a bondholder if the issuer decides to call the bond before its maturity date. This premium is typically above the bond's par value and is designed to compensate the investor for the early redemption and the inconvenience of reinvesting their principal at potentially lower interest rates.</p>
+            </div>
+             <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond38')">
+                38. What is the difference between a "Bond" and a "Note"?
+            </button>
+            <div id="bond38-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The primary difference is maturity. A bond is typically a long-term debt instrument with a maturity of more than 10 years. A note has a shorter maturity, generally between 1 and 10 years. The terms are often used interchangeably, but this distinction is generally recognized.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond39')">
+                39. What is a "Reinvestment Risk" in bonds?
+            </button>
+            <div id="bond39-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Reinvestment risk is the risk that an investor will not be able to reinvest their periodic cash flows (coupon payments) from a bond at a rate of return as high as the bond's original yield. This risk is particularly relevant for callable bonds, as the issuer is likely to call the bond when interest rates are low, forcing the investor to reinvest the principal at a lower rate.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond40')">
+                40. What is a "Rating Downgrade" and what is its impact on a bond?
+            </button>
+            <div id="bond40-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A rating downgrade occurs when a credit rating agency (like S&P or Moody's) lowers its assessment of a bond issuer's creditworthiness. A downgrade signals that the risk of default has increased. This typically causes the bond's price to fall and its yield to rise, as investors demand a higher return to compensate for the added risk.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond41')">
+                41. What is an "Annuity Bond"?
+            </button>
+            <div id="bond41-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>An annuity bond is a type of bond that pays a fixed amount of money at regular intervals. Unlike a typical bond that pays a periodic coupon and returns the principal at maturity, an annuity bond's payments include both principal and interest, with the principal being gradually paid down over the bond's life.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond42')">
+                42. What are "Inflation-Indexed Bonds"?
+            </button>
+            <div id="bond42-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>Inflation-indexed bonds are debt securities whose principal and interest payments are tied to a measure of inflation, such as the Consumer Price Index (CPI). This feature protects investors from the erosion of their purchasing power due to inflation. Treasury Inflation-Protected Securities (TIPS) are a prime example.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond43')">
+                43. What is a "Yankee Bond"?
+            </button>
+            <div id="bond43-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A Yankee bond is a type of foreign bond that is issued in the United States by a non-U.S. entity. It is denominated in U.S. dollars and is subject to U.S. securities regulations. They allow foreign issuers to access the U.S. capital markets.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond44')">
+                44. What is the difference between a "Coupon Rate" and a "Yield to Maturity"?
+            </button>
+            <div id="bond44-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>The coupon rate is the fixed interest rate the bond issuer pays to the bondholder based on the bond's par value. It never changes. Yield to maturity (YTM), however, is the total return anticipated on a bond if the bond is held until it matures. It accounts for the coupon rate, the bond's current market price, its par value, and the time to maturity. YTM fluctuates as market conditions change.</p>
+            </div>
+            <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('bond45')">
+                45. What is a "Bullet Bond"?
+            </button>
+            <div id="bond45-answer" class="answer-box rounded-xl text-left bg-blue-100 border border-blue-200 text-gray-700 transition-all duration-500">
+                <p>A bullet bond is a bond that has its entire principal amount due at a single maturity date. Unlike an annuity bond, it doesn't have a schedule for repaying principal over its life. This is the most common type of bond structure.</p>
+            </div>
+        </div>
+
+        <!-- Corporate Action Section -->
+        <div id="corporate-action-section" class="space-y-6 mt-10 hidden">
+            <!-- New Sub-Section Menu -->
+            <div id="ca-sub-menu" class="space-y-4">
+                <h2 class="text-3xl font-bold mb-6 text-purple-700">Corporate Action</h2>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleCASubSection('ca-questions')">
+                    1. Corporate Action Questions (45 Q&A)
+                </button>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleCASubSection('ca-types')">
+                    2. Types of Corporate Action (7 Categories)
+                </button>
+            </div>
+            
+            <!-- 1. Corporate Action Questions (Existing 45 Q&A) -->
+            <div id="ca-questions" class="space-y-6 mt-10 hidden">
+                <h3 class="text-2xl font-bold mb-4 text-gray-700">1. Corporate Action Questions</h3>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca1')">
+                    1. What is a corporate action?
+                </button>
+                <div id="ca1-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A corporate action is any event initiated by a company that brings material change and affects its shareholders, bondholders, or other stakeholders. These actions are typically approved by a company's board of directors and can have a significant impact on the company's valuation, share structure, or financial position.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca2')">
+                    2. Can you give some examples of corporate actions?
+                </button>
+                <div id="ca2-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>Common examples include:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li>Dividends (cash or stock)</li>
+                        <li>Stock splits (forward and reverse)</li>
+                        <li>Mergers and acquisitions</li>
+                        <li>Spin-offs</li>
+                        <li>Rights issues</li>
+                        <li>Share buybacks</li>
+                        <li>Bond calls</li>
+                        <li>Tender offers</li>
+                    </ul>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca3')">
+                    3. What is the main difference between mandatory and voluntary corporate actions?
+                </button>
+                <div id="ca3-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A mandatory corporate action is an event that all shareholders must participate in; no action is required from them. A voluntary corporate action requires shareholders to respond or take action (e.g., to accept or reject an offer). Some actions are mandatory with options, where shareholders can choose from a set of choices, with a default option if no response is received.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca4')">
+                    4. Explain a stock split and a reverse stock split.
+                </button>
+                <div id="ca4-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A stock split increases the number of shares and decreases the share price proportionally, without changing the company's market capitalization. For example, a 2-for-1 split doubles the number of shares and halves the price. A reverse stock split consolidates shares, increasing the price and decreasing the total number of shares. This is often done to increase a low stock price to meet listing requirements.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca5')">
+                    5. How does a dividend payout work?
+                </button>
+                <div id="ca5-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A dividend is a distribution of a company's earnings to its shareholders. A company's board of directors declares a dividend, setting a declaration date, ex-dividend date, record date, and payment date. To receive the dividend, an investor must own the stock before the ex-dividend date. On the ex-dividend date, the stock price typically drops by the amount of the dividend.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca6')">
+                    6. What is the purpose of a share buyback?
+                </button>
+                <div id="ca6-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A share buyback, or share repurchase, is when a company buys back its own shares from the open market. This reduces the number of outstanding shares, which can increase the company's earnings per share (EPS) and potentially boost its stock price. It can also be seen as a sign that the company believes its stock is undervalued.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca7')">
+                    7. What is a "rights issue" and why do companies do it?
+                </button>
+                <div id="ca7-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A rights issue is a way for a company to raise new capital by offering existing shareholders the right to buy additional shares at a discounted price. It is a voluntary corporate action. Companies do this to fund new projects, pay off debt, or for general corporate purposes. It is a way to raise funds without diluting ownership for existing shareholders who choose to participate.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca8')">
+                    8. Explain the difference between a merger and an acquisition.
+                </button>
+                <div id="ca8-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>In a merger, two companies of similar size agree to combine and form a new, single company. In an acquisition, one company (the acquirer) buys a majority or all of the shares of another company (the target), which then ceases to exist as an independent entity. Both are a form of corporate restructuring.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca9')">
+                    9. What is a "spin-off"?
+                </button>
+                <div id="ca9-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A spin-off is a corporate action where a company separates a business unit or subsidiary into a new, independent company. Shares of the new company are then distributed to the parent company's shareholders. This is often done to unlock value in a specific business unit that is not being fully appreciated as part of the larger company.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca10')">
+                    10. What is a "tender offer"?
+                </button>
+                <div id="ca10-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A tender offer is a public offer made by a company to buy a certain number of shares of another company's stock, usually at a price higher than the current market price. It is a way to acquire a significant portion of a company's stock. It's a voluntary action for the shareholders of the target company.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca11')">
+                    11. What is a "bond call"?
+                </button>
+                <div id="ca11-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A bond call is a corporate action where the issuer of a callable bond repurchases the bond from investors before its maturity date. This typically happens when interest rates have fallen, allowing the company to refinance its debt at a lower rate.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca12')">
+                    12. What are the tax implications of a stock dividend?
+                </button>
+                <div id="ca12-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A stock dividend is a non-taxable event at the time of distribution. Instead of cash, shareholders receive additional shares. The tax basis of the original shares is spread out over the total number of shares held after the dividend, which affects the capital gains calculation when the shares are eventually sold.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca13')">
+                    13. What is a "bonus issue" and how is it different from a stock split?
+                </button>
+                <div id="ca13-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A bonus issue is a free distribution of additional shares to existing shareholders, typically from a company's reserves. While similar to a stock split in that it increases the number of shares and decreases the price, a bonus issue is a distribution of reserves, whereas a stock split is simply a change in the share structure. Both are a form of mandatory corporate action.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca14')">
+                    14. How does a company's name change affect its securities?
+                </button>
+                <div id="ca14-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A company name change is a mandatory corporate action. The old securities (e.g., stocks and bonds) are effectively replaced by new ones with the new name. The trading ticker symbol may also change. This is an administrative event that doesn't change the underlying value of the company or its shares.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca15')">
+                    15. Why is it important for financial professionals to track corporate actions?
+                </button>
+                <div id="ca15-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>Tracking corporate actions is crucial for accurate record-keeping, position management, and risk mitigation. A failure to properly process a corporate action can lead to financial losses, regulatory non-compliance, and client dissatisfaction. It ensures that the firm and its clients receive the correct shares, cash, or other entitlements.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca16')">
+                    16. What is a "delisting"?
+                </button>
+                <div id="ca16-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A delisting is the removal of a company's stock from a stock exchange. A company can be delisted voluntarily if it decides to go private or is acquired by another company. It can also be delisted involuntarily if it fails to meet the exchange's listing requirements, such as a minimum share price or market capitalization.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca17')">
+                    17. What is a "proxy voting"?
+                </button>
+                <div id="ca17-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>Proxy voting is a process that allows shareholders to vote on company-related issues, such as electing board members or approving a merger, without having to attend the annual shareholder meeting in person. Shareholders are given a proxy form that enables them to assign their voting rights to a third party or a company representative.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca18')">
+                    18. How does a company's name change affect shareholders?
+                </button>
+                <div id="ca18-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A company's name change is a mandatory corporate action that has no financial impact on shareholders. Their shares in the company remain the same, though the name on the share certificate and the ticker symbol may change. The change is administrative and is often done to reflect a new business strategy, a merger, or a spin-off.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca19')">
+                    19. What is a "tender offer" and how is it different from a share buyback?
+                </button>
+                <div id="ca19-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A tender offer is a public proposal to acquire a large number of a company's shares, usually at a price significantly above the current market price, and within a set timeframe. A share buyback is a more general term for a company repurchasing its own stock. A tender offer is one specific method a company can use to execute a share buyback, but buybacks can also happen gradually on the open market.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca20')">
+                    20. What is a "merger of equals"?
+                </button>
+                <div id="ca20-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A merger of equals is a type of merger where two companies of similar size and market capitalization combine to form a new company. The term is used to describe a merger where neither company is clearly the "acquirer." These mergers can be complex to execute, as they require a careful integration of management teams and corporate cultures.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca21')">
+                    21. Explain a "Debt-for-Equity Swap."
+                </button>
+                <div id="ca21-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A debt-for-equity swap is a corporate action where a company's creditors agree to exchange their debt for an equivalent amount of equity in the company. This is a form of corporate restructuring often used to reduce a company's debt burden and improve its balance sheet, especially in times of financial distress.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca22')">
+                    22. What is a "Liquidation"?
+                </button>
+                <div id="ca22-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>Liquidation is a corporate action where a company winds down its operations, sells its assets, and distributes the proceeds to its creditors and shareholders. This occurs when a company is facing bankruptcy or decides to cease its business operations. It is a final corporate action that results in the company's dissolution.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca23')">
+                    23. What is a "dividend reinvestment plan" (DRIP)?
+                </button>
+                <div id="ca23-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A dividend reinvestment plan (DRIP) is a program that allows shareholders to automatically reinvest their cash dividends back into the company's stock. It is a voluntary corporate action that enables investors to increase their share count over time without incurring additional transaction fees.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca24')">
+                    24. What is a "Poison Pill" and why is it used?
+                </button>
+                <div id="ca24-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A poison pill, or shareholder rights plan, is a defensive strategy used by a company to prevent a hostile takeover. It gives existing shareholders the right to buy more shares at a deep discount if a single entity acquires a certain percentage of the company's stock. This effectively dilutes the hostile acquirer's ownership and makes the takeover much more expensive.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca25')">
+                    25. What is the difference between a cash dividend and a stock dividend?
+                </button>
+                <div id="ca25-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A cash dividend is a direct cash payment made to shareholders, reducing the company's cash reserves. A stock dividend, on the other hand, is a distribution of additional shares to shareholders. While a cash dividend reduces the company's balance, a stock dividend increases the number of outstanding shares and reduces the stock price proportionally.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca26')">
+                    26. What is a "Subscription"?
+                </button>
+                <div id="ca26-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A subscription is a voluntary corporate action that gives shareholders the right to purchase new shares at a specified price. It is similar to a rights issue, but the term "subscription" is more commonly used in the context of IPOs or new offerings where a company invites a selected group of investors to buy shares.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca27')">
+                    27. What is the difference between an "ex-dividend date" and a "record date"?
+                </button>
+                <div id="ca27-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>The ex-dividend date is the first day a stock trades without the right to its next dividend. An investor must buy the stock before this date to be entitled to the dividend. The record date is the date on which a company determines which shareholders are officially registered to receive the dividend. The ex-dividend date is typically two business days before the record date.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca28')">
+                    28. What is a "Bonus Issue"?
+                </button>
+                <div id="ca28-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A bonus issue is a mandatory corporate action in which a company distributes a specified number of additional shares to its existing shareholders for free. It is similar to a stock split but is often seen as a way for a company to reward its shareholders by distributing a portion of its reserves as capital.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca29')">
+                    29. How does an "Initial Public Offering" (IPO) relate to corporate actions?
+                </button>
+                <div id="ca29-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>An IPO is a corporate action where a private company sells its shares to the public for the first time. It is a transformative event for a company, as it changes its legal structure and its relationship with investors. It is a major event that requires extensive planning and regulatory compliance.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca30')">
+                    30. What is a "Spin-off" and how does it create value?
+                </button>
+                <div id="ca30-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A spin-off is a corporate action where a parent company separates one of its business units and creates a new, independent company. Shares of the new company are then distributed to the parent company's shareholders. This is often done to unlock value in a business unit that may be undervalued as part of a larger conglomerate, allowing it to focus on its core operations and attract investors who specialize in that industry.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca31')">
+                    31. What is a "Corporate Name Change"?
+                </button>
+                <div id="ca31-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A corporate name change is a mandatory corporate action where a company officially changes its name. This is an administrative event that doesn't change the company's legal status, its assets, or its liabilities. It is often done to reflect a merger, a spin-off, or a new brand identity. The company's ticker symbol may also change.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca32')">
+                    32. What is a "Subscription Rights Offering"?
+                </button>
+                <div id="ca32-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A subscription rights offering is a voluntary corporate action that gives existing shareholders the right to buy additional shares at a discounted price for a limited period. The company issues "rights" that shareholders can either exercise (buy the new shares) or sell in the open market. This allows the company to raise capital while giving existing shareholders the chance to maintain their ownership percentage.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca33')">
+                    33. What is a "Dividend Reinvestment Plan (DRIP)"?
+                </button>
+                <div id="ca33-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A Dividend Reinvestment Plan (DRIP) is a program offered by a company that allows shareholders to automatically use their cash dividends to buy more shares of the company's stock. It's a convenient way for investors to increase their holdings without paying brokerage commissions. This is a voluntary action for the shareholder.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca34')">
+                    34. What is the difference between a "Cash Dividend" and a "Stock Dividend"?
+                </button>
+                <div id="ca34-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A cash dividend is a distribution of a company's earnings in cash, which reduces the company's cash reserves. A stock dividend is a distribution of additional shares of the company's stock to existing shareholders, and does not involve any cash. A stock dividend increases the number of outstanding shares and dilutes the value of each individual share.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca35')">
+                    35. What is a "Master Limited Partnership (MLP) Split"?
+                </button>
+                <div id="ca35-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>An MLP split is a mandatory corporate action where an MLP (Master Limited Partnership) splits into two or more separate MLPs. This is often done to separate different business segments, such as upstream and midstream operations, to unlock value for investors.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca36')">
+                    36. What is a "Tender Offer"?
+                </button>
+                <div id="ca36-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A tender offer is a public proposal to buy a company's shares from its existing shareholders, typically at a price above the current market price. The offer is for a fixed period and a set number of shares. It is often a key step in a hostile takeover attempt.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca37')">
+                    37. What is the difference between a "Merger" and a "Consolidation"?
+                </button>
+                <div id="ca37-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A merger is a corporate action where two companies combine to form a single company, and one of the original companies ceases to exist. A consolidation is a corporate action where two or more companies combine to form a new, separate entity. All original companies cease to exist.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca38')">
+                    38. What is a "Poison Pill"?
+                </button>
+                <div id="ca38-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A poison pill, also known as a shareholder rights plan, is a defensive strategy used by a company to prevent a hostile takeover. It gives existing shareholders the right to buy more shares at a deep discount if a single entity acquires a certain percentage of the company's stock. This effectively dilutes the hostile acquirer's ownership and makes the takeover more expensive.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca39')">
+                    39. What is a "Bond Redemption"?
+                </button>
+                <div id="ca39-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A bond redemption is a corporate action where a bond issuer repays the principal of a bond to the bondholders. This can happen at the bond's maturity date or, if the bond is callable, before the maturity date. Bond calls are often triggered when interest rates fall, allowing the issuer to refinance its debt at a lower rate.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca40')">
+                    40. How does a "Stock Split" affect a company's market capitalization?
+                </button>
+                <div id="ca40-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A stock split has no effect on a company's market capitalization. Market capitalization is calculated by multiplying the number of shares by the share price. In a stock split, the number of shares increases, but the share price decreases proportionally, so the total market capitalization remains unchanged.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca41')">
+                    41. What is the purpose of a "Share Buyback"?
+                </button>
+                <div id="ca41-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A share buyback is when a company repurchases its own shares from the open market. This can be done to reduce the number of outstanding shares, which increases earnings per share (EPS) and can boost the stock price. It can also be seen as a way for a company to return value to shareholders.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca42')">
+                    42. What is a "Spin-Off"?
+                </button>
+                <div id="ca42-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A spin-off is a corporate action where a parent company separates a business unit into a new, independent company. The new company's shares are then distributed to the parent company's shareholders. This is often done to unlock value in a business unit that may be undervalued as part of a larger conglomerate.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca43')">
+                    43. What is a "Proxy Vote"?
+                </button>
+                <div id="ca43-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A proxy vote allows shareholders to vote on company matters without attending the annual shareholder meeting in person. Shareholders are given a proxy form that they can use to vote on issues such as electing directors, approving a merger, or other key decisions.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca44')">
+                    44. What is a "Corporate Restructuring"?
+                </button>
+                <div id="ca44-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>Corporate restructuring is a broad term for any significant change in a company's legal, financial, or operational structure. This can include mergers and acquisitions, spin-offs, and bankruptcies. The goal of restructuring is typically to improve a company's financial health and competitive position.</p>
+                </div>
+                <button class="w-full text-left p-4 rounded-xl font-bold text-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg transition-all duration-300 transform hover:scale-105" onclick="toggleAnswer('ca45')">
+                    45. What is a "Stock Reclassification"?
+                </button>
+                <div id="ca45-answer" class="answer-box rounded-xl text-left bg-emerald-100 border border-emerald-200 text-gray-700 transition-all duration-500">
+                    <p>A stock reclassification is a corporate action where a company changes the class of its shares. For example, a company might reclassify its Class B shares into Class A shares. This can be done for various reasons, such as simplifying the company's share structure or consolidating voting rights. It is a mandatory corporate action.</p>
+                </div>
+            </div>
+
+            <!-- 2. Types of Corporate Action (New Structured List) -->
+            <div id="ca-types" class="space-y-6 mt-10 hidden text-left">
+                <h3 class="text-2xl font-bold mb-4 text-gray-700">2. Types of Corporate Action</h3>
+                
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">1. Mandatory Corporate Actions</h4>
+                    <p class="text-sm italic mb-4">These are compulsory for all shareholders. No action is required on their part.</p>
+                    <ul class="list-decimal list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Cash Dividend: A distribution of a company's earnings in cash.</li>
+                        <li>Stock Dividend / Bonus Issue: A distribution of additional shares to existing shareholders.</li>
+                        <li>Stock Split: Increases the number of shares and decreases the share price proportionally.</li>
+                        <li>Reverse Stock Split: Decreases the number of shares and increases the share price.</li>
+                        <li>Merger: Two companies combine to form a single entity.</li>
+                        <li>Spin-off: A business unit is separated into a new, independent company.</li>
+                        <li>Delisting: A stock is removed from a stock exchange.</li>
+                        <li>Corporate Name Change: A company officially changes its name.</li>
+                        <li>CUSIP/ISIN Change: The security's identification number changes.</li>
+                        <li>Bond Redemption: The issuer repays the principal of a bond at maturity.</li>
+                        <li>Liquidation: A company sells its assets and distributes the proceeds to creditors and shareholders before dissolving.</li>
+                        <li>Share Consolidation: A reduction in the number of outstanding shares.</li>
+                        <li>Debt Restructuring: The terms of a company's debt are renegotiated, often to avoid bankruptcy.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">2. Voluntary Corporate Actions</h4>
+                    <p class="text-sm italic mb-4">These require shareholders to make a decision and take action.</p>
+                    <ul class="list-decimal list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Tender Offer: An offer to buy a company's shares from its existing shareholders, often at a premium.</li>
+                        <li>Rights Issue: An offer to existing shareholders to buy additional shares at a discounted price.</li>
+                        <li>Share Buyback / Share Repurchase: A company repurchases its own shares from the market.</li>
+                        <li>Subscription: An offer to a selected group of investors to buy new shares.</li>
+                        <li>Debt-for-Equity Swap: Creditors exchange their debt for equity in the company.</li>
+                    </ul>
+                </div>
+                
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">3. Mandatory with Options Corporate Actions</h4>
+                    <p class="text-sm italic mb-4">Shareholders must participate, but they can choose from a set of options. If they do not respond, a default option is applied.</p>
+                    <ul class="list-decimal list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Scrip Dividend: Shareholders can choose to receive their dividend in cash or in new shares.</li>
+                        <li>Stock/Cash Election: Similar to a scrip dividend, shareholders can choose to receive a specific corporate action entitlement in either stock or cash.</li>
+                        <li>Dutch Auction Tender Offer: A tender offer where shareholders can choose the price at which they are willing to sell their shares. The company sets a price range and accepts the lowest bids first.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">4. Capital Adjustments</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Capital Reduction: A company reduces its share capital, often to return cash to shareholders or to write off accumulated losses.</li>
+                        <li>Share Cancellation: A company buys back its shares and cancels them, reducing the total number of outstanding shares.</li>
+                        <li>Unit Trust/ETF Creation/Redemption: The creation or destruction of units in an Exchange Traded Fund (ETF) or Unit Trust based on investor demand.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">5. Reorganization and Bankruptcy Events</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Scheme of Arrangement: A court-sanctioned agreement between a company and its creditors or members to alter their legal rights. Often used for mergers, acquisitions, or restructuring.</li>
+                        <li>Receivership/Administration: A legal process where an administrator is appointed to manage a company's affairs, usually in a state of insolvency, to protect creditors.</li>
+                        <li>Liquidation/Winding Up: The formal process of ending a company's business operations and distributing its assets to creditors and shareholders.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">6. Bond and Debt-Related Actions</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Puttable Bond Redemption: A bondholder exercises their right to sell a puttable bond back to the issuer before maturity.</li>
+                        <li>Bond Call: The issuer exercises their right to redeem a callable bond before maturity.</li>
+                        <li>Bond Default: The issuer fails to make a required interest or principal payment on a bond.</li>
+                        <li>Bond Conversion: The holder of a convertible bond exercises their right to convert the bond into shares of the issuing company.</li>
+                        <li>Tender Offer for Bonds: The issuer offers to buy back a portion of its outstanding bonds, often at a premium to the market price.</li>
+                        <li>Debt Exchange: An issuer offers to exchange one type of debt security for another, often to extend the maturity or change the coupon.</li>
+                    </ul>
+                </div>
+
+                <div class="p-4 rounded-xl bg-emerald-200/50 border border-emerald-300">
+                    <h4 class="text-xl font-bold text-teal-800 mb-2">7. Rights and Entitlement Changes</h4>
+                    <ul class="list-disc list-inside ml-4 space-y-2 text-gray-700">
+                        <li>Subscription: An offer for a selected group of investors to buy new shares, usually at a fixed price.</li>
+                        <li>Dividend Reinvestment Plan (DRIP): A voluntary program that allows shareholders to reinvest cash dividends into additional shares.</li>
+                        <li>Proxy Voting: The process by which shareholders can vote on company matters without being physically present at the shareholder meeting.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSection(sectionId) {
+            const sections = ['tlc-section', 'bonds-section', 'corporate-action-section'];
+            const mainMenu = document.getElementById('main-menu');
+            const selectedSection = document.getElementById(sectionId);
+            const isCurrentlyVisible = !selectedSection.classList.contains('hidden');
+        
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            
+            if (!isCurrentlyVisible) {
+                selectedSection.classList.remove('hidden');
+                mainMenu.classList.add('hidden');
+            } else {
+                 mainMenu.classList.remove('hidden');
+            }
+        }
+
+        // New function to toggle between Corporate Action sub-sections
+        function toggleCASubSection(subSectionId) {
+            const caSubSections = ['ca-questions', 'ca-types'];
+            const selectedSubSection = document.getElementById(subSectionId);
+            const isCurrentlyVisible = !selectedSubSection.classList.contains('hidden');
+
+            caSubSections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            
+            if (!isCurrentlyVisible) {
+                selectedSubSection.classList.remove('hidden');
+            }
+        }
+
+        function toggleAnswer(id) {
+            const answerElement = document.getElementById(id + '-answer');
+            const parentSection = answerElement.closest('div');
+            const sectionAnswers = parentSection.querySelectorAll('.answer-box');
+
+            sectionAnswers.forEach(box => {
+                if (box.id !== answerElement.id) {
+                    box.classList.remove('active');
+                }
+            });
+
+            answerElement.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
