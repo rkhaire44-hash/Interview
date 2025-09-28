@@ -1,0 +1,219 @@
+/* --- Global Styles & Nebula Theme --- */
+:root {
+    --bg-primary: #0a0b1c;
+    --bg-secondary: #13142e;
+    --accent-cyan: #00f2fe;
+    --accent-magenta: #a200ff;
+    --text-primary: #edf2f4;
+    --text-secondary: #adb5bd;
+    --border-color-translucent: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    background: linear-gradient(-45deg, #0a0b1c, #13142e, #2e132e, #132e2e);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 3rem 2rem;
+    box-sizing: border-box;
+}
+
+/* --- Header --- */
+.main-header, .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.main-header h1, .page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.main-header p, .page-header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+/* --- Button Grid --- */
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* --- Glassmorphism Effect for Buttons & Panels --- */
+.topic-button, .accordion, .panel {
+    background: rgba(27, 28, 59, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid var(--border-color-translucent);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* --- Individual Buttons --- */
+.topic-button {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.topic-button:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 242, 254, 0.2);
+    border: 1px solid rgba(0, 242, 254, 0.5);
+}
+
+/* --- Back Link for Sub-Pages --- */
+.back-link {
+    display: inline-block;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-magenta);
+    text-decoration: underline;
+}
+
+/* --- Content & Accordion Styles --- */
+.content-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.accordion {
+    position: relative;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 20px 60px 20px 30px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    margin-top: 1rem;
+}
+
+.accordion::after {
+    content: '+';
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.accordion.active::after {
+    transform: translateY(-50%) rotate(45deg);
+    color: var(--accent-cyan);
+}
+
+.accordion:hover {
+    background: rgba(46, 47, 86, 0.6);
+}
+
+.accordion.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid transparent;
+}
+
+.panel {
+    padding: 0 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* --- Content Formatting Inside Panels --- */
+.panel h4 {
+    color: var(--accent-cyan);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color-translucent);
+    padding-bottom: 0.5rem;
+}
+
+.panel p, .panel li {
+    line-height: 1.7;
+    color: #cad2d9;
+}
+
+.panel ul, .panel ol {
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.panel blockquote {
+    border-left: 4px solid var(--accent-cyan);
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
+    color: var(--text-secondary);
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    body {
+        padding: 3rem 1rem; /* Reduce side padding on small screens */
+    }
+
+    .main-header, .page-header {
+        margin-bottom: 3rem; /* Reduce space below the header */
+    }
+
+    .main-header h1, .page-header h1 {
+        font-size: 2.2rem; /* Make the main title smaller */
+    }
+
+    .main-header p, .page-header p {
+        font-size: 1.1rem; /* Adjust subtitle font size */
+    }
+
+    .accordion {
+        padding: 18px 50px 18px 20px; /* Adjust accordion button padding */
+    }
+
+    .accordion::after {
+        right: 20px; /* Move the '+' icon slightly */
+    }
+}
