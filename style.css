@@ -1,26 +1,22 @@
-/* --- Global Styles & Nebula Theme --- */
+/* --- Global Styles & Fintech Pro Theme --- */
 :root {
-    --bg-primary: #0a0b1c;
-    --bg-secondary: #13142e;
-    --accent-cyan: #00f2fe;
-    --accent-magenta: #a200ff;
-    --text-primary: #edf2f4;
-    --text-secondary: #adb5bd;
-    --border-color-translucent: rgba(255, 255, 255, 0.1);
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    --bg-primary: #020412;
+    --bg-card: #111827;
+    --accent-primary: #00d1ff;
+    --accent-secondary: #ad53ff;
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --glow-shadow-primary: 0 0 20px rgba(0, 209, 255, 0.4);
+    --glow-shadow-secondary: 0 0 20px rgba(173, 83, 255, 0.4);
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-primary);
-    background: linear-gradient(-45deg, #0a0b1c, #13142e, #2e132e, #132e2e);
-    background-size: 400% 400%;
-    animation: gradientAnimation 20s ease infinite;
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(0, 209, 255, 0.1), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(173, 83, 255, 0.1), transparent 25%);
     background-attachment: fixed;
     color: var(--text-primary);
     display: flex;
@@ -40,18 +36,19 @@ body {
 }
 
 .main-header h1, .page-header h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+    font-size: 3.2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
-    text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+    text-shadow: var(--glow-shadow-primary), var(--glow-shadow-secondary);
 }
 
 .main-header p, .page-header p {
     font-size: 1.2rem;
     color: var(--text-secondary);
+    max-width: 600px;
 }
 
 /* --- Button Grid --- */
@@ -63,13 +60,19 @@ body {
     max-width: 1100px;
 }
 
-/* --- Glassmorphism Effect for Buttons & Panels --- */
-.topic-button, .accordion, .panel {
-    background: rgba(27, 28, 59, 0.5); /* Semi-transparent background */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-    border: 1px solid var(--border-color-translucent);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+/* --- Base Style for Interactive Cards (Buttons, Accordions) --- */
+.topic-button, .accordion {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 12px;
+}
+
+.topic-button:hover, .accordion:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4), var(--glow-shadow-primary);
 }
 
 /* --- Individual Buttons --- */
@@ -77,32 +80,24 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     padding: 1.5rem 2rem;
-    border-radius: 12px;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.topic-button:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 242, 254, 0.2);
-    border: 1px solid rgba(0, 242, 254, 0.5);
 }
 
 /* --- Back Link for Sub-Pages --- */
 .back-link {
     display: inline-block;
-    color: var(--accent-cyan);
+    color: var(--accent-primary);
     text-decoration: none;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .back-link:hover {
-    color: var(--accent-magenta);
-    text-decoration: underline;
+    color: var(--accent-secondary);
+    text-shadow: var(--glow-shadow-secondary);
 }
 
 /* --- Content & Accordion Styles --- */
@@ -117,63 +112,63 @@ body {
     cursor: pointer;
     padding: 20px 60px 20px 30px;
     width: 100%;
-    border-radius: 10px;
     text-align: left;
     outline: none;
     font-size: 1.15rem;
     font-weight: 600;
-    transition: background-color 0.3s ease, border-radius 0.3s ease;
     margin-top: 1rem;
 }
 
 .accordion::after {
-    content: '+';
+    content: '>';
+    font-family: monospace;
     font-size: 1.8rem;
     color: var(--text-secondary);
     position: absolute;
     right: 30px;
     top: 50%;
-    transform: translateY(-50%);
-    transition: transform 0.3s ease, color 0.3s ease;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), color 0.3s ease;
 }
 
 .accordion.active::after {
-    transform: translateY(-50%) rotate(45deg);
-    color: var(--accent-cyan);
-}
-
-.accordion:hover {
-    background: rgba(46, 47, 86, 0.6);
+    transform: translateY(-50%) rotate(-90deg);
+    color: var(--accent-primary);
 }
 
 .accordion.active {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    border-bottom: 1px solid transparent;
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4), var(--glow-shadow-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .panel {
     padding: 0 30px;
+    background-color: var(--bg-card);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    border: 1px solid var(--border-color);
     border-top: none;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: inset 0 6px 10px -5px rgba(0,0,0,0.5);
 }
 
 /* --- Content Formatting Inside Panels --- */
 .panel h4 {
-    color: var(--accent-cyan);
-    margin-top: 1.5rem;
+    color: var(--accent-primary);
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color-translucent);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
 .panel p, .panel li {
     line-height: 1.7;
-    color: #cad2d9;
+    color: var(--text-primary);
 }
 
 .panel ul, .panel ol {
@@ -182,93 +177,45 @@ body {
 }
 
 .panel blockquote {
-    border-left: 4px solid var(--accent-cyan);
-    padding-left: 20px;
-    margin-left: 0;
+    border-left: 4px solid var(--accent-primary);
+    padding: 10px 20px;
+    margin: 1.5rem 0;
     font-style: italic;
     color: var(--text-secondary);
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 209, 255, 0.05);
     border-radius: 4px;
 }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 600px) {
     body {
-        padding: 3rem 1rem; /* Reduce side padding on small screens */
+        padding: 3rem 1rem;
     }
 
     .main-header, .page-header {
-        margin-bottom: 3rem; /* Reduce space below the header */
+        margin-bottom: 3rem;
     }
 
     .main-header h1, .page-header h1 {
-        font-size: 2.2rem; /* Make the main title smaller */
+        font-size: 2.5rem;
     }
 
     .main-header p, .page-header p {
-        font-size: 1.1rem; /* Adjust subtitle font size */
+        font-size: 1.1rem;
     }
 
     .accordion {
-        padding: 18px 50px 18px 20px; /* Adjust accordion button padding */
+        padding: 18px 50px 18px 20px;
     }
 
     .accordion::after {
-        right: 20px; /* Move the '+' icon slightly */
-    }
-}
-
-/* --- Mobile Responsiveness & Touch Optimization --- */
-@media (max-width: 768px) {
-    body {
-        padding: 2rem 1rem;
-    }
-
-    .main-header h1, .page-header h1 {
-        font-size: 2rem;
-    }
-
-    .main-header p, .page-header p {
-        font-size: 1rem;
-    }
-
-    .topic-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1.2rem; /* slightly bigger gap for finger space */
-    }
-
-    .topic-button {
-        font-size: 1rem;
-        padding: 1.2rem; /* more padding for touch */
-        border-radius: 14px; /* softer touch feel */
-        min-height: 52px; /* ensures 44px+ tap area */
-    }
-
-    .accordion {
-        padding: 20px 50px 20px 20px; /* bigger touch area */
-        font-size: 1rem;
-        min-height: 50px;
-    }
-
-    .accordion::after {
-        right: 18px;
-        font-size: 1.6rem;
-    }
-
-    .panel {
-        padding: 0 20px 15px; /* more bottom padding for readability */
-    }
-
-    .back-link {
-        font-size: 1rem;
-        padding: 0.6rem 0; /* extra vertical tap area */
-        display: inline-block;
+        right: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .topic-grid {
-        grid-template-columns: 1fr; /* single column for very small screens */
+        grid-template-columns: repeat(2, 1fr); /* two buttons per row */
         gap: 1rem;
     }
 
