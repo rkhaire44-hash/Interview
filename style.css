@@ -218,3 +218,87 @@ body {
     }
 }
 
+/* --- Mobile Responsiveness & Touch Optimization --- */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    .main-header h1, .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .main-header p, .page-header p {
+        font-size: 1rem;
+    }
+
+    .topic-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem; /* slightly bigger gap for finger space */
+    }
+
+    .topic-button {
+        font-size: 1rem;
+        padding: 1.2rem; /* more padding for touch */
+        border-radius: 14px; /* softer touch feel */
+        min-height: 52px; /* ensures 44px+ tap area */
+    }
+
+    .accordion {
+        padding: 20px 50px 20px 20px; /* bigger touch area */
+        font-size: 1rem;
+        min-height: 50px;
+    }
+
+    .accordion::after {
+        right: 18px;
+        font-size: 1.6rem;
+    }
+
+    .panel {
+        padding: 0 20px 15px; /* more bottom padding for readability */
+    }
+
+    .back-link {
+        font-size: 1rem;
+        padding: 0.6rem 0; /* extra vertical tap area */
+        display: inline-block;
+    }
+}
+
+@media (max-width: 480px) {
+    .topic-grid {
+        grid-template-columns: 1fr; /* single column for very small screens */
+        gap: 1rem;
+    }
+
+    .main-header h1, .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-header p, .page-header p {
+        font-size: 0.95rem;
+    }
+
+    .topic-button {
+        font-size: 1rem;
+        padding: 1.3rem; /* bigger touch padding */
+        min-height: 56px;
+    }
+
+    .accordion {
+        padding: 22px 50px 22px 20px;
+        font-size: 1rem;
+        min-height: 56px;
+    }
+
+    .accordion::after {
+        right: 16px;
+        font-size: 1.8rem; /* larger touch target for expand icon */
+    }
+
+    .back-link {
+        font-size: 1rem;
+        padding: 0.8rem 0; /* bigger clickable area */
+    }
+}
