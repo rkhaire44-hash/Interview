@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reorganization & Bankruptcy - Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="corporate_action.html" class="back-link">← Back to Corporate Actions</a>
+        <h1>Reorganization & Bankruptcy Events</h1>
+        <p>Major corporate actions that occur when a company changes its structure, ownership, or legal standing.</p>
+    </header>
+
+    <main class="content-container">
+        
+        <button class="accordion">1. Scheme of Arrangement</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A Scheme of Arrangement is a court-approved agreement between a company and its shareholders or creditors that reorganizes their rights. It's often used in mergers, debt restructuring, and capital reorganizations, particularly in Commonwealth jurisdictions.</p>
+            
+            <h4>Mechanics</h4>
+            <ul>
+                <li>A company proposes the scheme.</li>
+                <li>Shareholders/creditors vote on it (usually requires a 75% supermajority).</li>
+                <li>If approved, the scheme is submitted to a court for sanction.</li>
+                <li>Once sanctioned, it becomes legally binding on all parties, even those who voted against it.</li>
+            </ul>
+
+            <h4>Example – Merger via Scheme</h4>
+            <p>Company A wants to acquire Company B. B proposes a scheme where its shareholders get 2 shares of A for every 1 share of B. If approved and sanctioned by the court, all B shareholders are bound by the deal, ensuring a smooth transfer of ownership.</p>
+            
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> Why is a scheme of arrangement often used in mergers?<br><strong>A:</strong> Because once it's court-approved, it becomes binding on 100% of shareholders, which is a more certain and efficient way to complete a takeover than a traditional tender offer that relies on individual acceptance.</blockquote>
+        </div>
+
+        <button class="accordion">2. Receivership / Administration</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A legal process where an external administrator is appointed to take control of a company that cannot meet its debt obligations. The goal is typically to protect creditors by attempting to rescue the business, sell it as a going concern, or maximize asset value before liquidation.</p>
+            
+            <h4>Shareholder Impact</h4>
+            <p>Shareholders usually lose control of the company, and their equity value often drops significantly, sometimes to zero. A successful restructuring that preserves shareholder value is rare.</p>
+
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> What is the key difference between receivership and liquidation?<br><strong>A:</strong> Receivership (or administration) is primarily a rescue attempt—it aims to save or sell the business as a viable entity. Liquidation is the end—it's the process of closing the business down completely and selling off its individual assets.</blockquote>
+        </div>
+
+        <button class="accordion">3. Liquidation / Winding Up</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Liquidation is the final stage of a company’s life. It ceases all operations, a liquidator is appointed to sell all its assets, the proceeds are used to pay off creditors in a specific order of priority, and the company is legally dissolved.</p>
+            
+            <h4>Priority of Payout</h4>
+             <ol>
+                <li>Secured creditors</li>
+                <li>Preferential creditors (e.g., employees for unpaid wages)</li>
+                <li>Unsecured creditors</li>
+                <li>Subordinated debt holders</li>
+                <li>Shareholders (who often receive little to nothing)</li>
+            </ol>
+           
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> In what order are stakeholders paid during liquidation?<br><strong>A:</strong> The order is strictly defined: secured creditors are first, followed by preferential and unsecured creditors. Shareholders are last in line and only get paid if any funds remain after all other debts have been settled.</blockquote>
+        </div>
+        
+        <button class="accordion">Comparison Table – Reorganization & Bankruptcy Events</button>
+        <div class="panel">
+           <style>
+               .comparison-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+               .comparison-table th, .comparison-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+               .comparison-table th { background-color: #1a2233; }
+           </style>
+           <table class="comparison-table">
+               <thead>
+                   <tr>
+                       <th>Event</th>
+                       <th>Purpose</th>
+                       <th>Key Outcome</th>
+                       <th>Shareholder Impact</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td><strong>Scheme of Arrangement</strong></td>
+                       <td>Reorganize rights / M&A / debt terms</td>
+                       <td>Court-approved change to capital or structure</td>
+                       <td>Shares may be swapped, converted, or bought out</td>
+                   </tr>
+                   <tr>
+                       <td><strong>Receivership / Administration</strong></td>
+                       <td>Rescue business or repay creditors</td>
+                       <td>External manager takes control</td>
+                       <td>Control lost, shares often lose value</td>
+                   </tr>
+                   <tr>
+                       <td><strong>Liquidation / Winding Up</strong></td>
+                       <td>Close business and distribute assets</td>
+                       <td>Assets sold, company dissolved</td>
+                       <td>Shares often become worthless</td>
+                   </tr>
+               </tbody>
+           </table>
+        </div>
+
+    </main>
+
+    <script>
+        const accordions = document.getElementsByClassName("accordion");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Adjustments - Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="corporate_action.html" class="back-link">← Back to Corporate Actions</a>
+        <h1>Capital Adjustments</h1>
+        <p>Actions that change a company’s share capital structure without altering proportional ownership.</p>
+    </header>
+
+    <main class="content-container">
+        
+        <button class="accordion">1. Capital Reduction</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A Capital Reduction is when a company reduces its issued share capital, often to return excess cash to shareholders or to eliminate accumulated losses from its balance sheet.</p>
+            
+            <h4>Mechanics</h4>
+            <ul>
+                <li><strong>Return of Capital:</strong> The company pays shareholders cash, reducing the nominal value per share.</li>
+                <li><strong>Accounting Adjustment:</strong> The company cancels part of its paid-up capital to offset losses, with no cash changing hands.</li>
+            </ul>
+
+            <h4>Example – Return of Capital</h4>
+            <p>A company decides to return $0.20 per share. If you hold 5,000 shares, you receive 5,000 × $0.20 = $1,000 in cash. The share price may adjust downward by a similar amount.</p>
+            
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> Why would a company do a capital reduction instead of paying a dividend?<br><strong>A:</strong> A capital reduction doesn't require distributable reserves, which dividends do. It's also a tool to clean up the balance sheet by writing off historical losses, making the company more attractive.</blockquote>
+        </div>
+
+        <button class="accordion">2. Share Cancellation</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Share cancellation occurs when a company repurchases its own shares and then permanently cancels them, reducing the total number of shares in existence.</p>
+            
+            <h4>Example</h4>
+            <p>A company with 100 million shares and $180 million in net income repurchases and cancels 10 million shares. Its new share count is 90 million.</p>
+             <ul>
+                <li><strong>Old EPS:</strong> $180M / 100M shares = $1.80</li>
+                <li><strong>New EPS:</strong> $180M / 90M shares = $2.00</li>
+            </ul>
+            <p>The result is a higher EPS, which can lead to a higher valuation.</p>
+
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> What is the difference between share cancellation and treasury shares?<br><strong>A:</strong> Cancelled shares are permanently removed. Treasury shares are repurchased and held by the company, and can be reissued later (e.g., for employee stock plans).</blockquote>
+        </div>
+
+        <button class="accordion">3. ETF / Unit Trust Creation and Redemption</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>For Exchange-Traded Funds (ETFs) and Unit Trusts, creation and redemption is the process of issuing and cancelling units to meet investor demand. It's how these funds grow or shrink in size.</p>
+            
+            <h4>Mechanics</h4>
+             <ul>
+                <li><strong>Creation:</strong> Authorized Participants (APs) deliver a basket of securities to the ETF provider, who in turn issues new ETF units. This increases supply.</li>
+                <li><strong>Redemption:</strong> APs return ETF units to the provider and receive the underlying securities back. This decreases supply.</li>
+            </ul>
+             <p>This mechanism is key to keeping an ETF's market price aligned with its Net Asset Value (NAV).</p>
+
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> How do creations and redemptions help liquidity?<br><strong>A:</strong> They allow the ETF's supply to be dynamically adjusted. When demand is high, new units are created; when demand falls, units are redeemed. This prevents large price swings away from the fund's intrinsic value.</blockquote>
+        </div>
+        
+        <button class="accordion">Summary Table – Capital Adjustments</button>
+        <div class="panel">
+           <style>
+               .comparison-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+               .comparison-table th, .comparison-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+               .comparison-table th { background-color: #1a2233; }
+           </style>
+           <table class="comparison-table">
+               <thead>
+                   <tr>
+                       <th>Action</th>
+                       <th>Definition</th>
+                       <th>Purpose</th>
+                       <th>Effect on Shareholders</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td><strong>Capital Reduction</strong></td>
+                       <td>Reduction of nominal share capital</td>
+                       <td>Return capital or write off losses</td>
+                       <td>Cash returned or balance sheet improved</td>
+                   </tr>
+                   <tr>
+                       <td><strong>Share Cancellation</strong></td>
+                       <td>Permanent removal of repurchased shares</td>
+                       <td>Improve EPS and capital efficiency</td>
+                       <td>Ownership % and EPS increase</td>
+                   </tr>
+                   <tr>
+                       <td><strong>ETF/Unit Trust Creation/Redemption</strong></td>
+                       <td>Issuance or cancellation of fund units</td>
+                       <td>Adjust fund size based on demand</td>
+                       <td>Maintains liquidity and NAV alignment</td>
+                   </tr>
+               </tbody>
+           </table>
+        </div>
+
+    </main>
+
+    <script>
+        const accordions = document.getElementsByClassName("accordion");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

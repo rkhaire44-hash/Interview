@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandatory with Options - Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="corporate_action.html" class="back-link">← Back to Corporate Actions</a>
+        <h1>Mandatory with Options</h1>
+        <p>These actions are mandatory for the company to execute and apply to all shareholders, but shareholders must choose from a set of options. If they do nothing, a default option is applied.</p>
+    </header>
+
+    <main class="content-container">
+        
+        <button class="accordion">1. Scrip Dividend</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A scrip dividend (also called a stock dividend alternative) is a dividend where shareholders can choose to receive their dividend in cash or in additional shares of the company.</p>
+            
+            <h4>Mechanics</h4>
+            <ul>
+                <li>The company declares a dividend (e.g., $0.50 per share).</li>
+                <li>Shareholders are given a choice before a deadline: Cash or new shares.</li>
+                <li>If no response is given, the default option (often cash) is applied.</li>
+            </ul>
+
+            <h4>Example</h4>
+            <p>Company ABC Ltd. declares a scrip dividend of $0.50 per share. The reference share price is $10. You own 1,000 shares, making your dividend entitlement $500.</p>
+            <ul>
+                <li><b>Option A – Cash:</b> Receive $500 directly.</li>
+                <li><b>Option B – Shares:</b> Receive $500 / $10 = 50 new shares.</li>
+            </ul>
+
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> Why might a company offer a scrip dividend instead of a pure cash dividend?<br><strong>A:</strong> It gives shareholders flexibility (income vs. compounding) and allows the company to retain cash while still rewarding shareholders.</blockquote>
+        </div>
+
+        <button class="accordion">2. Stock/Cash Election</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Similar to a scrip dividend but applies to other corporate actions like mergers or special distributions. Shareholders must choose between receiving their entitlement in stock or cash.</p>
+            
+            <h4>Mechanics</h4>
+             <ul>
+                <li>The company announces the corporate action and gives two or more options (e.g., all-cash, all-stock).</li>
+                <li>Shareholders submit their elections by a deadline.</li>
+                <li>If one option is oversubscribed, a proration may occur (receiving a mix of cash and stock).</li>
+                <li>If no choice is made, the default is applied.</li>
+            </ul>
+
+            <h4>Example</h4>
+            <p>In a merger, each share of Company Y can be exchanged for either $50 in cash or 2 shares of Company X (worth $25 each). You own 100 shares of Y.</p>
+             <ul>
+                <li><b>Option A – Cash:</b> Receive 100 × $50 = $5,000.</li>
+                <li><b>Option B – Stock:</b> Receive 100 × 2 = 200 shares of X.</li>
+            </ul>
+
+            <h4>Interview Q / Model Answer</h4>
+            <blockquote><strong>Q:</strong> What is proration in a stock/cash election?<br><strong>A:</strong> Proration occurs if more shareholders choose one option than the company allocated. Each shareholder then receives a proportion of their chosen option and the remainder in the alternative.</blockquote>
+        </div>
+
+        <button class="accordion">Key Differences: Scrip Dividend vs. Stock/Cash Election</button>
+        <div class="panel">
+           <style>
+               .comparison-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+               .comparison-table th, .comparison-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+               .comparison-table th { background-color: #1a2233; }
+           </style>
+           <table class="comparison-table">
+               <thead>
+                   <tr>
+                       <th>Feature</th>
+                       <th>Scrip Dividend</th>
+                       <th>Stock/Cash Election</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td><strong>Purpose</strong></td>
+                       <td>Dividend payout choice</td>
+                       <td>Consideration choice in a corporate action (often M&A)</td>
+                   </tr>
+                   <tr>
+                       <td><strong>Event type</strong></td>
+                       <td>Dividend distribution</td>
+                       <td>Merger, acquisition, or special payout</td>
+                   </tr>
+                   <tr>
+                       <td><strong>Options</strong></td>
+                       <td>Cash vs. additional shares</td>
+                       <td>Cash vs. stock (sometimes a mix)</td>
+                   </tr>
+                    <tr>
+                       <td><strong>Default</strong></td>
+                       <td>Often cash</td>
+                       <td>Often cash or a prorated mix</td>
+                   </tr>
+               </tbody>
+           </table>
+        </div>
+
+    </main>
+
+    <script>
+        const accordions = document.getElementsByClassName("accordion");
+
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
