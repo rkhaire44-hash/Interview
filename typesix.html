@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured & Hybrid Bonds - Interview Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="fixed_income.html" class="back-link">← Back to Fixed Income</a>
+        <h1>Structured & Hybrid Bonds</h1>
+        <p>Advanced debt products whose payoffs are linked to other assets or that blend debt and equity characteristics.</p>
+    </header>
+
+    <main class="content-container">
+
+        <button class="accordion">Quick Orientation (Structured vs. Hybrid)</button>
+        <div class="panel">
+            <p><strong>Structured bonds/notes:</strong> Debt products whose payoffs are linked to other assets or indices (e.g., equity, credit events, rates). They are created by combining basic building blocks like a zero-coupon bond and one or more options.</p>
+            <p><strong>Hybrid bonds:</strong> Instruments that blend debt and equity characteristics (e.g., convertibles, CoCos, perpetuals). They sit between pure bonds and equity on the risk/return spectrum.</p>
+            <h4>Key Pricing Concepts</h4>
+            <p>Common interview topics include: Yield to Maturity (YTM), Yield to Worst (YTW), Option-Adjusted Spread (OAS), duration & convexity, and the implied option value embedded in the structure.</p>
+        </div>
+
+        <button class="accordion">1. Convertible Bonds (Deep Dive)</button>
+        <div class="panel">
+            <h4>Definition & Purpose</h4>
+            <p>A convertible bond pays fixed coupons but gives the holder the option to convert into a pre-set number of issuer shares (conversion ratio) — offering downside protection (coupon) with upside equity participation.</p>
+            <h4>Mechanics</h4>
+            <ul>
+                <li>Face value (usually $1,000).</li>
+                <li>Conversion ratio = number of shares per bond (or conversion price = face value ÷ ratio).</li>
+                <li>Coupon paid until conversion or maturity.</li>
+                <li>Conversion window and any call/put provisions specified in indenture.</li>
+            </ul>
+            <h4>Valuation Basics</h4>
+            <p>Convertible Value ≈ Straight Bond Value + Value of Embedded Equity Call Option. Valued via models that combine interest-rate models and equity volatility (often a hybrid binomial or Monte Carlo).</p>
+            <h4>Important Metrics</h4>
+            <ul>
+                <li><strong>Parity value:</strong> conversion ratio × stock price.</li>
+                <li><strong>Conversion premium:</strong> (Bond price − Parity) ÷ Parity.</li>
+                <li><strong>Delta (equity sensitivity):</strong> Convertibles have an option-like “delta”, often less than 1.</li>
+            </ul>
+            <h4>Worked Example</h4>
+            <p>Face value = $1,000; coupon = 4%; maturity = 5 years. Conversion ratio = 25 shares (conversion price = $40). Current stock price = $50.</p>
+            <ol>
+                <li><strong>Parity value:</strong> 25 shares × $50/share = $1,250.</li>
+                <li>If the bond trades at $1,300, the <strong>Conversion Premium</strong> is ($1,300 - $1,250) / $1,250 = 4%.</li>
+            </ol>
+             <h4>Key Risks</h4>
+            <ul>
+                <li>Equity risk (if stock falls) — but coupon cushions losses.</li>
+                <li>Credit risk of issuer.</li>
+                <li>Liquidity (some convertibles thinly traded).</li>
+                <li>Dilution (if many convert).</li>
+            </ul>
+             <blockquote>
+                <strong>Q: How do you decide whether to convert?</strong><br>
+                <strong>A:</strong> Convert when the parity value is greater than the bond's market value. Also consider tax implications and transaction costs.
+            </blockquote>
+        </div>
+
+        <button class="accordion">2. Exchangeable Bonds</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Like convertibles, but convertible into shares of a different company (usually a subsidiary or another listed entity).</p>
+            <h4>Why Issue?</h4>
+            <p>A parent company can monetize its stake in a subsidiary without an immediate sale, while the investor gets equity participation in that other company.</p>
+            <h4>Mechanics & Example</h4>
+            <p>A bond with a face value of $1,000 is exchangeable into 40 shares of Subsidiary S. If the stock price of S is $30, the parity value is 40 × $30 = $1,200. The valuation mechanics are the same as for convertibles.</p>
+            <h4>Risks / Interview Note</h4>
+            <p>Understand the counterparty/corporate structure and potential strategic reasons for issuance (tax, regulatory, market impact).</p>
+        </div>
+
+        <button class="accordion">3. Contingent Convertible Bonds (CoCo / AT1)</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>CoCos are bank-issued bonds that convert into equity or are written down when a pre-specified trigger (usually a regulatory capital ratio like CET1) is breached. They are used to absorb losses and bolster bank capital.</p>
+            <h4>Mechanics & Trigger Types</h4>
+            <ul>
+                <li>Conversion to equity at a fixed conversion ratio or at a market price.</li>
+                <li>Write-down (partial or full) of principal.</li>
+                <li>Trigger: CET1 ratio falls below a specified percentage (e.g., 7%). Triggers are publicized in the prospectus.</li>
+            </ul>
+            <h4>Key Valuation Features</h4>
+            <ul>
+                <li>High coupon (compensates for risk).</li>
+                <li>Valuation uses credit models plus jump-to-default and regulatory-trigger modeling (complex).</li>
+                <li>Market prices are highly sensitive to the bank’s CET1 trajectory and credit spreads.</li>
+            </ul>
+             <h4>Key Risks</h4>
+            <ul>
+                <li><strong>Trigger Risk:</strong> The bond can convert or be written down at a time of stress, often at regulatory discretion.</li>
+                <li><strong>Coupon Cancellation:</strong> Issuers can often cancel coupons without it being an event of default.</li>
+                <li><strong>High Loss Severity:</strong> Bondholders can lose their entire principal.</li>
+            </ul>
+            <blockquote>
+                <strong>Q: Why do CoCos pay high coupons?</strong><br>
+                <strong>A:</strong> Because investors are compensated for taking on the significant risk of principal loss upon a trigger event and the risk of coupon cancellation. It's a credit and equity-like risk premium.
+            </blockquote>
+        </div>
+
+        <button class="accordion">4. Perpetuals & Preference-like Hybrids</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Perpetual bonds have no maturity date. They pay coupons indefinitely until the issuer calls them. They are often used by banks as regulatory capital.</p>
+             <h4>Mechanics</h4>
+            <ul>
+                <li>The coupon may be fixed or floating, and the bond is often callable at set dates (e.g., after 5 years).</li>
+                <li>Perpetuals often include non-cumulative features or deferrable coupons.</li>
+            </ul>
+            <h4>Valuation Note</h4>
+            <p>For a perpetual with a constant coupon (C) and a discount rate (r), the theoretical present value is C/r. However, real-world valuation must include call options and credit risk.</p>
+            <blockquote>
+                <strong>Q: How does yield behave for perps vs long-dated fixed bonds?</strong><br>
+                <strong>A:</strong> Perps usually yield more due to no maturity and higher credit/call risk.
+            </blockquote>
+        </div>
+        
+        <button class="accordion">5. Step-Up / Step-Down Bonds</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>These are bonds where the coupon changes at predetermined dates. A step-up bond increases its coupon, while a step-down bond decreases it.</p>
+            <h4>Mechanics & Example</h4>
+            <p>Example: A bond pays 5.0% for the first 5 years, then steps up to 7.0% thereafter until maturity. It is often combined with a call option at the first step-up date.</p>
+            <h4>Why Used?</h4>
+            <p>Step-up features are often used to compensate investors for call risk and to incentivize the issuer to call the bond before the coupon rate increases.</p>
+        </div>
+        
+        <button class="accordion">6. Reverse Convertibles</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A structured note that pays a high coupon, but at maturity, the issuer may repay in cash or deliver a predetermined number of shares of an underlying stock if that stock has fallen below a certain barrier.</p>
+            <h4>Mechanics</h4>
+            <ul>
+                <li>The underlying can be a single stock or a basket of stocks.</li>
+                <li>A barrier or knock-in level is set (e.g., 70% of the initial price).</li>
+                <li>If the underlying finishes above the barrier, the investor receives the par value in cash plus coupons.</li>
+                <li>If it finishes below, the investor receives a specified number of shares (or cash equivalent, potentially at a loss).</li>
+            </ul>
+            <h4>Worked Example</h4>
+             <p>An investor buys a reverse convertible for $1,000 with a 10% coupon. The underlying stock is at $50 and the barrier is $35. If the stock finishes below $35, the investor receives 20 shares. If the stock ends at $30, the investor gets shares worth $600 (20 x $30), resulting in a capital loss.</p>
+            <h4>Risks</h4>
+            <ul>
+                <li>Equity downside risk (loss can be large).</li>
+                <li>Counterparty risk (issuer default).</li>
+                <li>Not principal protected despite high coupon.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">7. Credit-Linked Notes (CLNs)</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>A CLN is a debt instrument with a payoff that is contingent on a credit event of a separate reference entity. The investor receives a higher coupon for taking on the credit risk of that third party.</p>
+            <h4>Mechanics</h4>
+            <ul>
+                <li>It is structured as a bond plus a short position in a Credit Default Swap (CDS) on a reference entity.</li>
+                <li>If no credit event occurs, the investor receives coupons plus principal at maturity.</li>
+                <li>If a credit event occurs, the note principal is reduced or used to pay the defaulted exposure.</li>
+            </ul>
+            <h4>Worked Example</h4>
+            <p>Face value $1,000, coupon 6% (vs similar non-linked instrument at 3%). Reference is Company X. If Company X defaults, principal is reduced to its recovery value (e.g., 40%), so the investor receives $400 instead of $1,000.</p>
+        </div>
+
+        <button class="accordion">8. Autocallables & Barrier / Range Products</button>
+        <div class="panel">
+             <h4>Autocallable Note</h4>
+            <p>Pays coupons periodically if an underlying asset stays above a barrier. Can be redeemed early ("autocalled") if the underlying is at or above a certain level on observation dates. If not called, the final payoff may be linked to shares and could incur losses.</p>
+            <h4>Range Accruals</h4>
+            <p>A note where the coupon only accrues for the days that a reference rate or index stays within a specified range. Payoffs are highly path-dependent.</p>
+        </div>
+
+        <button class="accordion">9. Principal Protected / Structured Notes</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Notes where principal protection is achieved by combining a zero-coupon bond (to guarantee principal at maturity) with options (to provide upside). The principal protection is only valid if the issuer remains solvent.</p>
+            <h4>Mechanics & Example</h4>
+            <p>Example composition: An investor's principal is used to buy a zero-coupon bond that will pay $1,000 at maturity. The remaining funds are used to buy call options on an equity index to provide upside potential.</p>
+             <h4>Risk</h4>
+            <p>The principal protection is dependent on the issuer's solvency. The investor still bears the counterparty risk of the issuer.</p>
+        </div>
+        
+        <button class="accordion">10. Structured Securitizations (CLOs, CDOs, REMICs)</button>
+        <div class="panel">
+            <h4>Definition</h4>
+            <p>Securitizations pool loans or other assets and issue tranches (slices) of debt ranked by seniority. Each tranche has a different level of credit risk and yield.</p>
+            <h4>Mechanics & Key Concepts</h4>
+            <ul>
+                <li><strong>Tranches:</strong> Senior tranches have the highest priority and lowest yield. Mezzanine and equity tranches absorb losses first but offer higher potential returns.</li>
+                <li><strong>Waterfall:</strong> The priority order in which cash flows are distributed to the tranches.</li>
+                <li><strong>Credit Enhancement:</strong> Mechanisms like subordination, reserve accounts, and overcollateralization protect senior tranches.</li>
+                <li><strong>REMIC:</strong> A structure for mortgage passthrough securities with favorable tax treatment.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">11. Valuation & Risk Metrics (Must-Know)</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Yield to Maturity (YTM):</strong> The single discount rate that equates the bond's price to the present value of its cash flows.</li>
+                <li><strong>Yield to Worst (YTW):</strong> The lowest possible yield an investor can receive among all possible scenarios (e.g., maturity, various call dates).</li>
+                <li><strong>Option-Adjusted Spread (OAS):</strong> The spread over a benchmark curve after removing the value of any embedded options.</li>
+                <li><strong>Duration & Convexity:</strong> Measures of interest-rate sensitivity. For bonds with options, use "effective" (option-adjusted) duration and convexity.</li>
+                <li><strong>Delta / Equity Sensitivity:</strong> For convertibles, this measures the bond's price sensitivity to changes in the underlying stock price.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">12. Key Risks (Summary)</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Credit / Counterparty Risk:</strong> Issuer solvency.</li>
+                <li><strong>Market Risk:</strong> Changes in rates, equities, FX.</li>
+                <li><strong>Model Risk:</strong> Valuation depends on complex models and assumptions.</li>
+                <li><strong>Liquidity Risk:</strong> Many structured products are illiquid.</li>
+                <li><strong>Event / Trigger Risk:</strong> For CoCos, CLNs, etc.</li>
+                <li><strong>Regulatory Risk:</strong> Changes in capital rules affecting CoCos/perps.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">13. Two Compact Case Studies</button>
+        <div class="panel">
+            <h4>Case A — CoCo Conversion Event</h4>
+            <p>A CoCo has a $1,000 face value and a conversion ratio of 50 shares (implying a $20 conversion price). The trigger is CET1 < 7%. If the trigger occurs when the stock price is $8, the holder receives 50 shares worth only $400 (50 x $8). This demonstrates a 60% principal loss.</p>
+            <h4>Case B — Reverse Convertible Payoff</h4>
+            <p>A reverse convertible has a $1,000 face value and is linked to 20 shares of a stock (initial price $50). The barrier is $35 (70% of initial). If the final stock price is $30 (below the barrier), the investor receives 20 shares valued at $600 (20 x $30). The total return is the coupons received plus the $600, representing a significant capital loss versus the initial principal.</p>
+        </div>
+
+        <button class="accordion">14. Final Interview Tips (High Yield)</button>
+        <div class="panel">
+            <ul>
+                <li>Always state who bears which risk (issuer, investor, reference entity, counterparty).</li>
+                <li>Use numeric examples, even simple ones, to demonstrate your understanding.</li>
+                <li>Mention key valuation drivers: interest rates, implied volatility, credit spreads, and correlation.</li>
+                <li>Highlight the importance of legal documents (prospectus, indenture) for defining triggers and terms.</li>
+                <li>Practice explaining OAS and YTW, as these are commonly tested concepts.</li>
+            </ul>
+        </div>
+
+        <h4>Cheat-Sheet Table</h4>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Payoff Feature</th>
+                        <th>Main Risk</th>
+                        <th>Typical Investor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Convertible</td>
+                        <td>Bond + equity option</td>
+                        <td>Equity + credit</td>
+                        <td>Hedge funds, convertible arbitrage</td>
+                    </tr>
+                    <tr>
+                        <td>Exchangeable</td>
+                        <td>Converts to different co.</td>
+                        <td>Same as convertible</td>
+                        <td>Strategic investors</td>
+                    </tr>
+                    <tr>
+                        <td>CoCo (AT1)</td>
+                        <td>Trigger conversion/write-down</td>
+                        <td>Trigger/regulatory + credit</td>
+                        <td>High-yield / specialist investors</td>
+                    </tr>
+                    <tr>
+                        <td>Perpetual</td>
+                        <td>No maturity</td>
+                        <td>Principal risk</td>
+                        <td>Income seekers, banks</td>
+                    </tr>
+                    <tr>
+                        <td>Step-Up</td>
+                        <td>Coupon increases later</td>
+                        <td>Call incentive</td>
+                        <td>Investors seeking call premium</td>
+                    </tr>
+                    <tr>
+                        <td>Reverse Convertible</td>
+                        <td>High coupon, equity delivery risk</td>
+                        <td>Large equity downside</td>
+                        <td>Retail / yield seekers</td>
+                    </tr>
+                    <tr>
+                        <td>CLN</td>
+                        <td>Pays credit risk of ref entity</td>
+                        <td>Reference credit event</td>
+                        <td>Credit investors</td>
+                    </tr>
+                    <tr>
+                        <td>Autocallable</td>
+                        <td>Early redemption linked to obs</td>
+                        <td>Path-dependence, equity risk</td>
+                        <td>Structured product buyers</td>
+                    </tr>
+                    <tr>
+                        <td>Principal-Protected</td>
+                        <td>ZCB + option</td>
+                        <td>Counterparty risk</td>
+                        <td>Conservative structured buyers</td>
+                    </tr>
+                    <tr>
+                        <td>CLO / REMIC</td>
+                        <td>Tranche seniority</td>
+                        <td>Correlation, default</td>
+                        <td>Institutional credit investors</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        const accordions = document.getElementsByClassName("accordion");
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+

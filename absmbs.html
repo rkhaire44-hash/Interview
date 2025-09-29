@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS & MBS - Interview Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="page-header">
+        <a href="fixed_income.html" class="back-link">← Back to Fixed Income</a>
+        <h1>Asset-Backed & Mortgage-Backed Securities</h1>
+        <p>A deep dive into securitization, from basic mechanics to complex structures like CMOs and CLOs.</p>
+    </header>
+
+    <main class="content-container">
+
+        <button class="accordion">1. High-Level Definition & Purpose</button>
+        <div class="panel">
+            <h4>Securitization</h4>
+            <p>An originator (bank, finance company, credit card issuer) pools loans/receivables and issues marketable securities backed by those cashflows. This transfers credit and liquidity risk from the originator to investors and provides funding to the originator.</p>
+            <ul>
+                <li><strong>ABS:</strong> Asset-Backed Securities (backed by auto loans, credit card, student loans, leases, etc.).</li>
+                <li><strong>MBS:</strong> Mortgage-Backed Securities (backed by residential (RMBS) or commercial mortgages (CMBS)).</li>
+                <li><strong>CLO:</strong> Collateralized Loan Obligation — securitization of leveraged (corporate) loans.</li>
+                <li><strong>CDO:</strong> Collateralized Debt Obligation — historically pooled loans/bonds or synthetic exposures; tranches of different seniorities.</li>
+            </ul>
+            <h4>Purpose for Issuers/Investors</h4>
+            <ul>
+                <li><strong>Issuers:</strong> Access cheaper funding, reduce balance sheet risk, regulatory capital management.</li>
+                <li><strong>Investors:</strong> Exposure to diversified cash flows, higher yield than government bonds, ability to choose risk/return by tranche.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">2. Basic Mechanics — Cashflow Waterfall</button>
+        <div class="panel">
+            <p>The "waterfall" is the core concept, defining the priority of payments.</p>
+            <ol>
+                <li><strong>Pool Cash Inflows:</strong> Borrower interest + scheduled principal + prepayments + recoveries.</li>
+                <li><strong>Fees & Expenses:</strong> Servicer fees, trustee fees, guarantee fees deducted first.</li>
+                <li><strong>Interest Distribution:</strong> Interest due to tranche investors (based on tranche coupon).</li>
+                <li><strong>Principal Distribution:</strong> According to tranche priority (waterfall). Senior tranches get principal before subordinated tranches.</li>
+                <li><strong>Residual/Equity:</strong> The last to receive any remaining cash.</li>
+            </ol>
+            <p><strong>Key structural levers:</strong> subordination (credit support), overcollateralization (OC), reserve accounts, excess spread, credit enhancement (third-party wrap / guarantee).</p>
+        </div>
+
+        <button class="accordion">3. MBS (Mortgage-Backed Securities)</button>
+        <div class="panel">
+            <h4>A. Types of MBS</h4>
+            <ul>
+                <li><strong>Agency MBS (Ginnie Mae, Fannie Mae, Freddie Mac):</strong> Government or GSE guaranteed; typically pass-through securities, monthly paythroughs, highly liquid.</li>
+                <li><strong>Non-agency (private-label) RMBS:</strong> No government guarantee, credit risk depends on mortgage underwriting and structure.</li>
+                <li><strong>CMBS (Commercial MBS):</strong> Backed by commercial mortgages; usually non-recourse, structured with loan-level covenants and special servicing.</li>
+                <li><strong>REMIC:</strong> A tax/structural wrapper used to create tranches with different characteristics while allowing tax efficiency.</li>
+            </ul>
+            <h4>B. Pass-through securities (Example & Arithmetic)</h4>
+            <p>A pass-through MBS pays investors a pro rata share of the monthly cashflow from the mortgage pool after fees.</p>
+            <p><strong>Example:</strong> Pool principal = $100,000,000; Pool WAC = 5.00%; Servicing fees = 0.50% → Pass-through coupon ≈ 4.50%.</p>
+            <ol>
+                <li><strong>Annual interest:</strong> $100,000,000 × 0.045 = $4,500,000.</li>
+                <li><strong>Monthly interest:</strong> $4,500,000 ÷ 12 = $375,000.</li>
+                <li><strong>If 1% monthly prepayment:</strong> $100,000,000 × 0.01 = $1,000,000 of principal is prepaid.</li>
+            </ol>
+            <h4>C. Prepayment Modeling: CPR, SMM, PSA</h4>
+            <ul>
+                <li><strong>CPR (Constant Prepayment Rate):</strong> Annualized percentage of outstanding principal prepaid in a year.</li>
+                <li><strong>SMM (Single Monthly Mortality):</strong> Monthly prepayment rate. Formula: SMM = 1 − (1 − CPR)^(1/12).</li>
+                <li><strong>PSA (Public Securities Association) Benchmark:</strong> A standard prepayment model ramping from 0.2% CPR to 6% CPR over 30 months.</li>
+            </ul>
+            <h4>D. Negative Convexity</h4>
+            <p>When rates fall, prepayments rise, shortening the MBS life and limiting price appreciation. When rates rise, prepayments slow, lengthening the life and increasing duration. This makes hedging complex.</p>
+        </div>
+
+        <button class="accordion">4. CMO (Collateralized Mortgage Obligation) & REMIC Tranching</button>
+        <div class="panel">
+            <h4>A. Purpose</h4>
+            <p>CMOs / REMICs split the pool into tranches with differing principal repayment schedules, durations, and prepayment sensitivities, allowing investors to buy specific cashflow profiles.</p>
+            <h4>B. Common Tranche Types</h4>
+            <ul>
+                <li><strong>Sequential (PAC / TAC):</strong> Sequential pay (Class A paid off first, then B, etc.). PAC (Planned Amortization Class) provides a stable principal payment collar.</li>
+                <li><strong>IO / PO (Interest Only / Principal Only):</strong> IOs receive only interest (hurt by faster prepayments). POs receive only principal (helped by faster prepayments).</li>
+                <li><strong>Z-tranche (Accrual bond):</strong> Receives no cash interest initially; interest accrues to principal.</li>
+                <li><strong>Companion tranche (support):</strong> Absorbs excess cashflows and prepayment volatility.</li>
+            </ul>
+            <h4>C. CMO Sequential Tranche Arithmetic</h4>
+            <p>Pool principal = $100M; Monthly principal payments = $1.2M. Structure: Class A = $60M; Class B = $40M. All principal goes to Class A first.</p>
+            <p><strong>Months to retire Class A:</strong> $60,000,000 ÷ $1,200,000 = 50 months. Class B receives no principal during this time.</p>
+            <h4>D. IO / PO Example</h4>
+            <p>Pool balance = $100M; pass-through coupon = 4.5%. First-month interest = ($100M × 4.5%) / 12 = $375,000. The IO tranche receives this, while the PO tranche receives all principal payments.</p>
+        </div>
+
+        <button class="accordion">5. REMIC — What & Why</button>
+        <div class="panel">
+            <p>REMIC (Real Estate Mortgage Investment Conduit) is a legal/tax structure in the U.S. used to issue multiple classes of mortgage securities. It allows the pool to be treated as a pass-through for tax purposes while enabling complex tranche customization (PAC, TAC, Z, etc.).</p>
+        </div>
+
+        <button class="accordion">6. ABS (Non-Mortgage) Mechanics & Examples</button>
+        <div class="panel">
+            <h4>A. Asset Classes</h4>
+            <p>Auto loan ABS, credit card ABS (revolving), student loan ABS, equipment leases, royalty/film receivables, etc.</p>
+            <h4>B. Revolving vs. Static Pools</h4>
+            <ul>
+                <li><strong>Static pool:</strong> A fixed set of assets where the principal amortizes over time.</li>
+                <li><strong>Revolving pool:</strong> The originator adds new receivables to replace collected principal during a "revolving period" (common in credit card ABS).</li>
+            </ul>
+            <h4>C. Credit Enhancement & Structural Protection</h4>
+            <ul>
+                <li><strong>Subordination (waterfall):</strong> Junior tranches absorb losses first.</li>
+                <li><strong>Overcollateralization (OC):</strong> Excess collateral over issued notes provides a cushion.</li>
+                <li><strong>Reserve account:</strong> A cash buffer for shortfalls.</li>
+                <li><strong>Excess spread:</strong> The pool yield minus coupon payments and fees; the first line of defense against defaults.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">7. CLO (Collateralized Loan Obligation) Specifics</button>
+        <div class="panel">
+            <h4>A. Structure & Lifecycle</h4>
+            <ul>
+                <li><strong>Collateral:</strong> Leveraged bank loans (senior secured corporate loans).</li>
+                <li><strong>Manager:</strong> An active manager buys and sells loans in the pool.</li>
+                <li><strong>Reinvestment period (3–5 years):</strong> Principal repayments are reinvested in new loans.</li>
+                <li><strong>Amortization period:</strong> Follows reinvestment; principal repays investors according to the waterfall.</li>
+                <li><strong>Tests:</strong> OC/IC (overcollateralization/interest coverage) tests can divert cashflows to pay down principal if tests fail.</li>
+            </ul>
+            <h4>B. Credit Enhancement & Returns</h4>
+            <p>Senior tranches have low yields, supported by subordination and excess spread. The equity tranche receives residual cashflows and has high potential returns with high risk.</p>
+            <h4>C. Risks</h4>
+            <ul>
+                <li><strong>Manager risk:</strong> Selection and trading decisions are critical.</li>
+                <li><strong>Credit risk:</strong> Leveraged loans' default correlation can spike in downturns.</li>
+                <li><strong>Liquidity & covenant deterioration:</strong> Covenant-lite loans increase risk.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">8. CDO & Synthetic Structures — Short Note</button>
+        <div class="panel">
+            <p>CDOs package debt into tranches. Synthetic CDOs use credit default swaps instead of actual loans. Pricing requires modeling correlations among underlying assets (historically a key failure point).</p>
+        </div>
+
+        <button class="accordion">9. Valuation & Risk Metrics (Practical)</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Cashflow modeling:</strong> Simulating interest, scheduled principal, and prepayment/default scenarios.</li>
+                <li><strong>Discounting:</strong> Tranche cashflows are discounted to a yield or curve + spread.</li>
+                <li><strong>OAS (Option-Adjusted Spread):</strong> Used for MBS/CMOs to account for embedded prepayment options.</li>
+                <li><strong>Effective duration & convexity:</strong> Option-adjusted measures for interest-rate sensitivity.</li>
+                <li><strong>Loss metrics (ABS/CLO):</strong> Expected loss = default rate × (1 − recovery).</li>
+                <li><strong>Stress testing:</strong> Running adverse scenarios to estimate tranche impairment.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">10. Main Risks — Summary</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Prepayment / extension risk (MBS):</strong> The major driver of MBS performance.</li>
+                <li><strong>Credit/default risk (Private RMBS, ABS, CLO mezzanine/equity).</strong></li>
+                <li><strong>Liquidity risk (Private-label securities and lower tranches).</strong></li>
+                <li><strong>Model risk (Prepayment models, correlation models).</strong></li>
+                <li><strong>Counterparty risk (Structures with derivatives or guarantees).</strong></li>
+                <li><strong>Operational / servicing risk (Poor servicing reduces recoveries).</strong></li>
+            </ul>
+        </div>
+
+        <button class="accordion">11. Operational & Legal Considerations</button>
+        <div class="panel">
+            <ul>
+                <li><strong>Pooling and servicing agreement (PSA):</strong> Defines servicing, payment dates, triggers, and prepayment handling.</li>
+                <li><strong>Trust & trustee:</strong> The legal structure that holds collateral and enforces the waterfall.</li>
+                <li><strong>ISIN / settlement / custodial flows:</strong> Requires correct mapping to avoid settlement fails.</li>
+                <li><strong>Regulatory capital/treatment:</strong> Securitizations affect issuer and investor capital requirements.</li>
+            </ul>
+        </div>
+
+        <button class="accordion">12. Practical Interview Qs & Model Answers</button>
+        <div class="panel">
+            <blockquote>
+                <strong>Q: How does an MBS investor get hurt when interest rates fall?</strong><br>
+                <strong>A:</strong> When rates fall, homeowners refinance, accelerating prepayments. Investors get principal back early and must reinvest at lower yields (reinvestment risk). The MBS also displays negative convexity, limiting price appreciation.
+            </blockquote>
+            <blockquote>
+                <strong>Q: Explain IO vs PO and how prepayments affect them.</strong><br>
+                <strong>A:</strong> An IO receives interest only; its value falls with faster prepayments because the interest-generating principal shrinks. A PO receives principal only; its value rises with faster prepayments as cash flows are received sooner.
+            </blockquote>
+            <blockquote>
+                <strong>Q: How do CLOs protect senior tranche investors?</strong><br>
+                <strong>A:</strong> Via subordination (equity/mezzanine absorb first losses), excess spread, OC/IC tests that divert cashflows if performance deteriorates, and active management.
+            </blockquote>
+             <blockquote>
+                <strong>Q: What is excess spread and why is it important?</strong><br>
+                <strong>A:</strong> Excess spread = pool coupon - fees - tranche coupons. It is the first line of defense against losses and funds reserve accounts.
+            </blockquote>
+        </div>
+        
+        <button class="accordion">Quick Summary</button>
+        <div class="panel">
+            <p>ABS & MBS are securitizations that transform illiquid loans into marketable securities via tranching and waterfalls. MBS have unique prepayment behavior (CPR/SMM/PSA) that creates negative convexity and makes valuation dependent on prepayment modelling and OAS. ABS use credit enhancement like subordination to create different risk classes; CLOs are actively managed loan pools with reinvestment periods and OC/IC tests. Key investor skills include cashflow modeling, scenario analysis, and managing credit & liquidity risk.</p>
+        </div>
+
+
+    </main>
+
+    <script>
+        const accordions = document.getElementsByClassName("accordion");
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
+
